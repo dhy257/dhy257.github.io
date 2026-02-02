@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 웹</title>
+    <style>
+      /* 기본 pc모니터 사이즈일 때 */
+      body {
+        background-color: aquamarine;
+      }
+      /* 768이하(태블릿)일 때 적용 */
+      /* 320이하(모바일)일 때 적용 */
+      @media screen and (max-width:768px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+      @media screen and (max-width:320px) {
+        body {
+          background-color: coral;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

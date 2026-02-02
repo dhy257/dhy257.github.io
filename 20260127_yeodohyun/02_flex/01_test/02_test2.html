@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: flex;
+        width: 600px;
+        border: 3px solid slateblue;
+      }
+      article{
+        width: 500px;
+        border: 3px solid red;
+
+        display: flex;
+        /* 오른쪽 끝으로 */
+        justify-content: flex-end;
+      }
+      div {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="box1">box1</div>
+      <!-- article로 2,3박스 묶기 -->
+      <article>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+      </article>
+    </section>
+  </body>
+</html>

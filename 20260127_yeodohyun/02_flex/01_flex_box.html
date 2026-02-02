@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex_box</title>
+    <style>
+      section {
+        /* 부모 요소에서 입력한다 */
+        /* 밑으로 떨어진 div들을 인라인처럼 좌우배치 */
+        /* 주축 브록요소를 인라인요소로 변경 */
+        display: flex;
+        /* 일정간격으로 조절 
+            space-between: 적당한 공백이 있으면서 정렬해줌
+            space-around: 좌우에도 공백 줌
+            space-evenly: 요소들 사이와 양 끝에 동일한 간격을 줌
+            center: 가운데 정렬
+            flex-start: 왼쪽 정렬
+            flex-end: 오른쪽 정렬
+            */
+        /* justify-content: space-around; */
+
+        /* 교차축, 세로축 정렬 */
+        /* 이게 주축이 됨 */
+        flex-direction: column;
+        /* 교차축 정렬
+        center: 가운데 정렬
+        flex-start: 위쪽 정렬
+        flex-end: 아래 정렬
+        */
+        align-items: flex-end;
+
+        /* 전체화면(스크롤 포함) 비율 높이(가로wh) */
+        height: 100vh;
+        border: 3px solid salmon;
+
+        /* 추가 부분 */
+        /* 가로 거꾸로 
+        flex-direction: row-reverse; */
+        /* 세로 거꾸로
+        flex-direction: column-reverse; */
+        /* 창 세로폭에 맞춰서 보여줌
+        flex-wrap: wrap-reverse;
+        flex-wrap: wrap; 
+        줄바꿈없이 하겠다
+        flex-wrap: nowrap;
+        */
+
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+      }
+      .box1 {
+        background-color: red;
+      }
+      .box2 {
+        background-color: orange;
+      }
+      .box3 {
+        background-color: yellow;
+      }
+      .box4 {
+        background-color: green;
+      }
+      .box5 {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="box1">box1 <br>
+        <a href="https://flexboxfroggy.com/#ko" target="_blank">flex연습하기</a>
+      </div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+      <div class="box5">box5</div>
+    </section>
+  </body>
+</html>

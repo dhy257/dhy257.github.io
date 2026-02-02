@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation01</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            
+            border-radius: 50%;
+            text-align: center;
+
+            font-size: 30px;
+            /* 글자 가운데 */
+            line-height: 200px;
+            /* 박스 가운데 */
+            margin: 50px auto;
+
+            /* 애니메이션 이름, 시간, 동작, 얼마나, 속성
+            alternate: 왔다갔다(돌아오게)
+            */
+            animation: anima 3s alternate infinite ease-in-out;
+        }
+        /* 애니메이션 정의 */
+        @keyframes anima{
+            from{
+                /* x,y */
+                transform: translate(0,0);
+            }
+            to{
+                transform: translate(400px,300px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">animation</div>
+</body>
+</html>

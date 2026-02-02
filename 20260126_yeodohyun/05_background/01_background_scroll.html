@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Background_Scroll</title>
+    <style>
+        /* 와일드 카드 문자(전체선택): 바깥여백 없애기 */
+        *{
+            margin: 0;
+        }
+        h3{
+            font-size: 70px;
+            /* 글자 두께 */
+            font-weight: 800px;
+            /* 줄 간격 */
+            line-height: 700px;
+            /* line-height: 700px; 
+            이거 대신 section height 조정가능
+            단, 글자는 위에 고정됨 */
+            text-align: center;
+            color: aliceblue;
+        }
+        .section1{
+            height: 700px;
+            /* background img가 아닌 건 속성도 같이 사용하기 위함 */
+            /* 이미지, 반복x, 가로로 50%이동, 세로로 0(맨위), 고정(배경은 고정 스크롤은 내려감) */
+            background: url(../../01_assets/01_images/back1.jpg) no-repeat 50% 0 fixed;
+            /* 이미지 가득 채워지게 */
+            background-size: cover;
+        }
+        .section2{
+            height: 700px;
+            background: url(../../01_assets/01_images/back2.jpg) no-repeat 50% 0 /cover scroll;
+            /* background-size: cover;  위에 /cover 도 가능 */
+        }
+        .section3{
+            height: 700px;
+            background: url(../../01_assets/01_images/back3.jpg) no-repeat 50% 0 scroll;
+            background-size: cover;
+        }
+        .section4{
+            height: 700px;
+            background: url(../../01_assets/01_images/back4.jpg) no-repeat 50% 0 scroll;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section class="section1">
+            <h3>WEB FRONTEND</h3>
+        </section>
+        <section class="section2">
+            <h3>WEB FRONTEND</h3>
+        </section>
+        <section class="section3">
+            <h3>WEB FRONTEND</h3>
+        </section>
+        <section class="section4">
+            <h3>WEB FRONTEND</h3>
+        </section>
+    </div>
+</body>
+</html>

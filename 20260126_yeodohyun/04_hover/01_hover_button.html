@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        ul{
+            /* 앞에 점 없애기 */
+            list-style: none;
+        }
+        li{
+            /* li자체가 블록요소였다가 인라인으로 변경 */
+            display: inline;
+            border: solid 2px black;
+        }
+        li:hover{
+            background-color: black;
+            color: whitesmoke;
+        }
+        a{
+            /* 밑줄(a태그 기본속성) 없애기 */
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            /* 폭포수 처럼 아래가 우선순위가 높기 때문에 가장 아래걸로 덮어쓰여진다.
+            따라서 가장 마지막의 whitesmoke가 적용 */
+            color: whitesmoke;
+        }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">버튼123</a></li>
+      <li><a href="#">버튼123</a></li>
+      <li><a href="#">버튼123</a></li>
+    </ul>
+  </body>
+</html>

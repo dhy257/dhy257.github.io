@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        /* nth-of-type 특정 유형만을 선택 : 지정한 요소의 것에서 n번째 가져옴
+        nth-child 유형에 관계없이 선택 : 어떤 요소든 상관없이 n번째 가져옴
+        */
+      .child_test :nth-child(1) {
+        /* 유형에 관계없이 선택
+            따라서 li부터가 아닌 p부터 선택 */
+        color: red;
+      }
+      .child_test :nth-child(3) {
+        color: blue;
+      }
+      .type_test li:nth-of-type(1){
+        /* li 요소중에 선택 */
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="child_test">
+      <p>nth-child</p>
+      <li>1번째</li>
+      <li>2번째</li>
+      <li>3번째</li>
+      <li>4번째</li>
+    </ul>
+    <ul class="type_test">
+      <p>nth-of-child</p>
+      <li>1번째</li>
+      <li>2번째</li>
+      <li>3번째</li>
+      <li>4번째</li>
+    </ul>
+  </body>
+</html>

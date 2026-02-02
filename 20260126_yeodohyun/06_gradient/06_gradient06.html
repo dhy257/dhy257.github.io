@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 500px;
+        height: 300px;
+        border: 1px solid;
+      }
+      .grad1 {
+        background: green;
+        background: repeating-linear-gradient(yellow, green 20px);
+      }
+      .grad2 {
+        background: green;
+        /* 시작 색상과 끝 색상을 명확하게 구분 */
+        /* 시작부터 20px지점까지 노란색, 20~40px 지점까지 초록색..
+        패턴 반복 */
+        background: repeating-linear-gradient(
+          yellow,
+          yellow 20px,
+          green 20px,
+          green 40px
+        );
+      }
+      .grad3 {
+        /* 중심에서 10%지점까지 노랑에서 빨강으로 반복 */
+        background: red;
+        background: repeating-radial-gradient(circle, yellow, red 10%);
+      }
+      .grad3 {
+        /* 중심에서 10%지점까지는 흰색, 10~20%는 회색..
+        동일 패턴 반복됨 */
+        background: red;
+        background: repeating-radial-gradient(
+          circle,
+          white,
+          white 10%,
+          gray 10%,
+          gray 20%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+    <div class="grad4"></div>
+  </body>
+</html>

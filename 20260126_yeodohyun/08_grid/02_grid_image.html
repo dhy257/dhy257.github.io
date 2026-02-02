@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid_image</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .parents {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(350px, auto);
+        grid-gap: 5px;
+      }
+      .parents > div {
+        border: 1px solid gray;
+        background-color: lightgray;
+        padding: 10px;
+        align-items: center; /* 가로 중앙 */
+        text-align: center;
+      }
+      /* 제목 */
+      .box p:first-child {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 5px; /* 제목과 이미지 사이 간격 조절 */
+      }
+
+      /* 설명 */
+      .box p:last-child {
+        margin: 10px;
+        font-size: 15px;
+        color: black;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover; /* 이미지가 찌그러지지 않게 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parents">
+      <div class="box box1">
+        <p>제목</p>
+        <img src="../../01_assets/01_images/item1.webp" alt="" />
+        <hr />
+        <p>설명1</p>
+      </div>
+      <div class="box box2">
+        <p>제목</p>
+        <img src="../../01_assets/01_images/item2.jpeg" alt="" />
+        <hr />
+        <p>설명1</p>
+      </div>
+      <div class="box box3">
+        <p>제목</p>
+        <img src="../../01_assets/01_images/item3.jpg" alt="" />
+        <hr />
+        <p>설명1</p>
+      </div>
+      <div class="box box4">
+        <p>제목</p>
+        <img src="../../01_assets/01_images/item4.jpg" alt="" />
+        <hr />
+        <p>설명1</p>
+      </div>
+      <div class="box box5">
+        <p>제목</p>
+        <img src="../../01_assets/01_images/item5.jpg" alt="" />
+        <hr />
+        <p>설명1</p>
+      </div>
+      <div class="box box6">
+        <p>제목</p>
+        <img src="../../01_assets/01_images/item6.jpg" alt="" />
+        <hr />
+        <p>설명1</p>
+      </div>
+    </div>
+  </body>
+</html>

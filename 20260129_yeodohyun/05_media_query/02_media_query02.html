@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      .item {
+        background-color: blue;
+        color: white;
+        border: 1px solid;
+        padding: 30px;
+        margin: 5px;
+        text-align: center;
+      }
+      /* 태블릿 */
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .item {
+          width: 50%;
+        }
+      }
+      /* PC */
+      @media (min-width: 1024px) {
+        .item {
+          width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">A</div>
+      <div class="item">B</div>
+      <div class="item">C</div>
+    </div>
+  </body>
+</html>

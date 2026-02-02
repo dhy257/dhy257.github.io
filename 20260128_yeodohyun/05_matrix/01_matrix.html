@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>matrix</title>
+    <style>
+      /* class는 .으로 선택하고 id는 # */
+      #wrap {
+        text-align: center;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: cadetblue;
+
+        font-size: 30px;
+        line-height: 300px;
+        color: aliceblue;
+
+        /* 도형이 가운데오게 배치 */
+        margin: 100px auto;
+      }
+      label{
+        cursor: pointer;
+        display: inline-block;
+      }
+      label:hover{
+        color: blue;
+        transform: scale(1.05);
+      }
+      /* id에 해당되는것이(#) 체크되었을때(~) 클래스(.)에 해당되는것에 대한 내용 */
+      #matrixDefault:checked~ .box{
+        /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+        /*  */
+        transform: matrix(1,0,0,1,0,0);
+      }
+      #matrixScale:checked~ .box{
+        transform: matrix(1.5,0,0,1.5,0,0);
+      }
+      #matrixSkew:checked~ .box{
+        transform: matrix(1,1.2,0.5,1,0,0);
+      }
+      #matrixTranslate:checked~ .box{
+        transform: matrix(1,0,0,1,300,400);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- matrixDefault 처럼 단어가 바뀔때 대문자: 봉긋 솟아올라서
+        낙타채라고도 부름 : JS할때 이렇게 함 -->
+      <input type="radio" name="matrix" id="matrixDefault" value="matrixSkew" />
+      <!-- 캡션: input과 label id,for 같은 이름 -->
+      <label for="matrixDefault">matrixDefault(초기화)</label>
+
+      <input type="radio" name="matrix" id="matrixScale" value="matrixSkew" />
+      <label for="matrixScale">matrixScale(줌효과)</label>
+
+      <input type="radio" name="matrix" id="matrixSkew" value="matrixSkew" />
+      <label for="matrixSkew">matrixSkew(기울기효과)</label>
+
+      <input
+        type="radio" name="matrix" id="matrixTranslate" value="matrixSkew" />
+      <label for="matrixTranslate">matrixTranslate(이동효과)</label>
+      <div class="box">matrix</div>
+    </div>
+  </body>
+</html>

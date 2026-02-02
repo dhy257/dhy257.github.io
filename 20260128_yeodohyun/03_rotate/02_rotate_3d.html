@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .origin {
+        /* 원근감 넣어주기 > 이렇게 해야 회전한 티가 남 */
+        perspective: 200px;
+
+        border: 1px solid;
+        width: 300px;
+        height: 200px;
+        margin: 50px;
+      }
+      .rotatex:hover {
+        /* x축 기준으로 시계방향 45도 회전 */
+        transform: rotateX(45deg);
+      }
+      .rotatey:hover {
+        /* y축 기준으로 시계방향 70도 회전 */
+        transform: rotateY(45deg);
+      }
+      .rotatez:hover {
+        /* z축 기준으로 시계방향 70도 회전 */
+        transform: rotateZ(45deg);
+      }
+      .rotatexyz:hover {
+        /* x축, y축, z축으로 수치만큼 45도 회전 */
+        transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>이미지 3차원 회줜하기</h2>
+    <div class="origin">
+      <div class="rotatex">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+    <div class="origin">
+      <div class="rotatey">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+    <div class="origin">
+      <div class="rotatez">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+    <div class="origin">
+      <div class="rotatexyz">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

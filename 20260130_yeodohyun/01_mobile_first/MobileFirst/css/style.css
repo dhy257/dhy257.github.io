@@ -1,0 +1,305 @@
+#wrap {
+  /* border: 1px solid red; */
+  /* 가운데오게끔 */
+  margin: 0 auto;
+  width: 100%;
+  /* 최대범위 지정 */
+  /* max-width: 1200px; */
+}
+/* main{
+    border: 1px solid red;
+} */
+/* ----------------------- Header ---------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #222;
+
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+.logo a {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 60px;
+  /* 위에서 space-around하면 안해도됨
+    왼쪽에서 좀 떨어트리는거임
+    */
+  margin-left: 1rem;
+}
+nav {
+  /* 평소에는 안 보임 */
+  display: none;
+  
+  /* 헤더 바로 아래에 위치 */
+  position: absolute;
+  top: 60px; /* header 높이만큼 띄움 */
+  left: 0;
+  width: 100%;
+  background: #333;
+  opacity: 0.95; /* 가독성을 위한 불투명*/
+}
+
+/* JS로 active 클래스가 붙으면 보임 */
+nav.active {
+  display: block;
+}
+
+/* 모바일 메뉴 내부 정렬 */
+nav ul {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  text-align: center;
+  list-style: none;
+}
+
+nav li {
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1); /* 구분선 (선택) */
+}
+
+nav a {
+  color: #fff;
+  font-size: 1.2rem;
+  display: block; /* 클릭 영역 확대 */
+  text-decoration: none;
+}
+nav a:hover {
+  color: lightblue;
+}
+.container {
+  /* 부모 요소 안에서 가로 중앙에 배치합니다 */
+  margin: 0 auto;
+  
+  /* 모바일 환경에서 양옆에 최소한의 여백을 줍니다 */
+  padding: 0 20px;
+  
+  /* box-sizing을 설정하면 padding이 너비에 포함되어 계산이 편해집니다 */
+  box-sizing: border-box;
+}
+/* .navbar{
+    display: none;
+} */
+/* 1번방법
+.menu_toggle_btn{
+    color: #fff;
+    font-size: 25px;
+    background: transparent;
+    border: none;
+} */
+/* 2번방법 */
+.menu_toggle_btn {
+  width: 2rem;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.menu_toggle_btn span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+/* Slider */
+.slider {
+  /* header의 height따라쓰면 딱 붙음 */
+  margin-top: 60px;
+}
+.slider img {
+  width: 100%;
+  height: auto;
+}
+.container {
+  /* border: 1px solid red; */
+  width: 100%;
+}
+.sec_tit {
+  background-color: lightblue;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+
+  font-weight: 600;
+}
+.desc {
+  text-align: center;
+  font-size: 1rem;
+}
+/* ----------------------- Promotion ---------------------------- */
+.promo_list {
+  margin-bottom: 1.5rem;
+}
+.promo_list li {
+  margin-bottom: 1.5rem;
+}
+.promo_list a {
+  /* border: 3px solid blue; */
+
+  display: block;
+  text-align: center;
+
+  background-color: #f2f2f2;
+}
+.promo_list a h3 {
+  color: #777;
+  font-weight: 600;
+}
+.promo_list a p {
+  color: #888;
+  font-size: 0.8rem;
+}
+/* ----------------------- Work ---------------------------- */
+.work_list li {
+  margin-bottom: 1.5rem;
+}
+.work_list a {
+  display: block;
+  background: #aaa;
+  text-align: center;
+  padding: 2rem;
+}
+.work_list li h3 {
+  color: #777;
+  font-weight: 600;
+}
+.work_list li span {
+  color: #888;
+  font-size: 0.8rem;
+}
+/* ----------------------- Blog ---------------------------- */
+.blog_list li {
+  margin-bottom: 1.5rem;
+}
+.blog_list h3 {
+  font-size: 1rem;
+  color: #777;
+  font-weight: 600;
+}
+/* ----------------------- Contact ---------------------------- */
+textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 2rem;
+  padding: 1rem;
+}
+/* ----------------------- Footer ---------------------------- */
+footer {
+  font-size: 0.8rem;
+  color: #888;
+}
+/* ----------------------- 태블릿 최소 768px ---------------------------- */
+@media (min-width: 768px) {
+  .promo_list,
+  .work_list,
+  .blog_list {
+    display: flex;
+    /* 자식 요소 너비가 부모 컨테이너의 너비를 초과할때 알아서 넘어가게 해준다 */
+    /* no-wrap은 한 줄에 강제로 배치 */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  .promo_list li,
+  .work_list li{
+    width: 48%;
+  }
+  .sec_tit {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu_toggle_btn {
+    display: none;
+  }
+  /* .navbar {
+    display: block;
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;
+  }
+  .navbar li {
+    padding: 15px;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+  }
+  .navbar a:hover {
+    color: blue;
+  } */
+  /* 2. Nav 태그: 모바일의 absolute(띄우기) 속성을 해제하고 헤더 흐름에 맞춤 */
+  nav {
+    display: block !important; /* JS로 토글된 display:none 무시하고 강제 보임 */
+    position: static; /* absolute 해제 -> 헤더 안에 자리를 잡음 */
+    width: auto;      /* 가로 100% 해제 -> 내용물만큼만 차지 */
+    background: transparent; /* 배경색 제거 */
+    opacity: 1;
+    margin-right: 20px; /* 오른쪽 여백 */
+  }
+
+  /* 3. UL 태그: 세로 정렬(column)을 가로 정렬(row)로 변경 */
+  nav ul {
+    display: flex;
+    flex-direction: row; /* ★핵심: 가로로 나열 */
+    position: static;    /* ul에 걸려있던 absolute도 해제 */
+    gap: 30px;           /* 메뉴 사이 간격 */
+    padding: 0;
+  }
+
+  /* 4. LI 태그: 모바일용 여백/테두리 제거 */
+  nav li {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  /* 5. A 태그: 폰트 스타일 */
+  nav a {
+    color: #fff; /* 헤더 배경이 어두우므로 흰색 글씨 */
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* 헤더: 로고와 메뉴가 수직 중앙에 오도록 설정 */
+  header {
+    align-items: center; 
+  }
+
+  .promo_list,
+  .work_list {
+    display: flex;
+    /* 자식 요소 너비가 부모 컨테이너의 너비를 초과할때 알아서 넘어가게 해준다 */
+    /* no-wrap은 한 줄에 강제로 배치 */
+    flex-wrap: wrap;
+    /* gap: 1.5rem; */
+    justify-content: center;
+  }
+  .promo_list li,
+  .work_list li {
+    width: 23%;
+  }
+  .blog_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .blog_list li {
+    width: 30%;
+  }
+  .sec_tit {
+    font-size: 2rem;
+  }
+}

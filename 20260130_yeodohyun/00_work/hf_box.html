@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hf 사이트 박스</title>
+    <style>
+      /* 다운한 폰트 넣기 */
+      @font-face {
+        font-family: "The Wild Breath of Zelda";
+        src: url(../../01_assets/03_fonts/The\ Wild\ Breath\ of\ Zelda.otf);
+      }
+      body {
+        background-color: rgba(250, 220, 150, 0.63);
+      }
+      p {
+        font-family: "The Wild Breath of Zelda";
+      }
+      h1 {
+        color: rgba(31, 16, 168, 0.836);
+        font-weight: 100;
+        margin: 50px 0;
+      }
+      section {
+        background-color: white;
+        border-radius: 5px;
+        width: 300px;
+        height: 450px;
+        box-shadow: rgb(118, 118, 118) 0px 7px 29px 0px;
+        padding: 25px;
+        margin: 15px;
+        cursor: pointer;
+      }
+      section:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px;
+        transform: scaleY(1.04);
+        transition: all 0.3s;
+        /* 회전 중심점 
+        x,y,z축 순서임
+        즉 밑에는 x축 고정에 y축으로 100%로 위로만 움직이라는 것
+        */
+        transform-origin: 0 100%;
+        /* transform: translateY(-50px); */
+      }
+    </style>
+  </head>
+  <body>
+    <p>The Breath of Zelda</p>
+    <h1>국민과 함께 성장하는 <b>글로벌 주택금융 리더</b></h1>
+    <main>
+      <section>
+        <h2>아낌e-보금자리론</h2>
+        <h3>0.1%p 더 저렴한 금리</h3>
+        <aside>
+          <span>최대</span><br />
+          주택가격 6억원
+          <img src="../../01_assets/01_images/call.png" width="100px" alt="" />
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* 헤더 시작 */
+header {
+  height: 70px;
+  /* 블루보틀 로고와 메뉴네비게이션 가로로 */
+  display: flex;
+  /* 상하 중앙 */
+  align-items: center;
+}
+a {
+  /* 밑줄 없애기 */
+  text-decoration: none;
+  /* 글자 관련 */
+  color: gray;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nav a {
+  padding: 15px;
+}
+a:hover {
+  background-color: aliceblue;
+  color: #01a1dd;
+}
+.logo {
+  margin-left: 20px;
+}
+.logo img {
+  width: 100px;
+}
+/* 메인 부분 시작 */
+main {
+  background-image: url(../../01_assets/01_images/bluebottle_back.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  /* margin-bottom: 30px; */
+}
+.ment1 {
+  position: relative;
+  top: 300px;
+  left: 45px;
+  /* 숫자em : 부모요소의 숫자배, 기본은 16px=1em */
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+}
+.ment2 {
+  position: relative;
+  top: 295px;
+  left: 45px;
+  color: aliceblue;
+  font-size: 3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main_btn {
+  position: relative;
+  top: 300px;
+  left: 45px;
+  background-color: #01a1dd;
+  border: 0;
+  padding: 5px 24px;
+  cursor: pointer;
+}
+/* 푸터부분 */
+footer {
+  background-color: lightgray;
+}
+.footer_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px; /* 컬럼 사이의 간격 */
+}
+.footer_container > div {
+  display: flex;
+  flex-direction: column;
+}
+.footer_column1, .footer_column2, .footer_column3, .footer_column4 {
+  gap: 15px;
+}
+.footer_btn {
+  background-color: black;
+  border: 0;
+  width: 270px;
+  height: 40px;
+  border-radius: 25px;
+  cursor: pointer;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+}
+/* 각 메인 메뉴 */
+h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #111;
+  font-weight: bold;
+}
+.fa-brands {
+  /* cdn쓰면 아이콘인데 폰트처럼 조절가능 */
+  font-size: 30px;
+}

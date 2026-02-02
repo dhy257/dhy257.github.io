@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        width: 700px;
+        height: 300px;
+        background-color: aliceblue;
+
+        border: 1px solid red;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 10px;
+      }
+
+      /* 속도 곡선 속성 값 */
+
+      #main div {
+        width: 200px;
+        height: 200px;
+        background-color: white;
+
+        color: black;
+        font-weight: bold;
+        border-radius: 5px;
+        /* text-align: center; */
+
+        text-align: left;
+        display: inline-block;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      #main .sub1:hover {
+        height: 250px;
+
+        transform: translateY(-10px);
+
+        box-shadow: 0 15px 30px yellow;
+
+        border-color: blue;
+      }
+      #main .sub2:hover {
+        height: 250px;
+
+        transform: translateY(-10px);
+
+        box-shadow: 0 15px 30px red;
+
+        border-color: blue;
+      }
+      #main .sub3:hover {
+        height: 250px;
+
+        transform: translateY(-10px);
+
+        box-shadow: 0 15px 30px orange;
+
+        border-color: blue;
+      }
+      h3 {
+        margin: 10px;
+      }
+      p {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 마우스 올렸을 때 Translate, Transition 속성 이용해서 Hover효과 적용 -->
+    <!-- 아낌e-보금자리론 / 0.1% 더 저렵한 금리 / 최대 / 주택가격 6억원 -->
+    <div id="main">
+      <div class="sub1">
+        1
+        <h3>
+          아낌e-보금자리론<br />
+          <span style="font-size: 0.7em; color: lightgray"
+            >0.1% 더 저렴한 금리</span
+          >
+        </h3>
+        <span style="color: skyblue">
+          <p>
+            <span style="font-size: 1.2em">최대</span><br />
+            <b>주택가격 6억원</b>
+          </p>
+        </span>
+      </div>
+      <div class="sub2">
+        2
+        <h3>
+          아낌e-보금자리론<br />
+          <small>0.1% 더 저렵한 금리</small>
+        </h3>
+        <span style="color: skyblue">
+          <p>
+            최대<br />
+            주택가격 6억원
+          </p>
+        </span>
+      </div>
+      <div class="sub3">
+        3
+        <h3>
+          아낌e-보금자리론<br />
+          <small>0.1% 더 저렵한 금리</small>
+        </h3>
+        <span style="color: skyblue">
+          <p>
+            최대<br />
+            주택가격 6억원
+          </p>
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

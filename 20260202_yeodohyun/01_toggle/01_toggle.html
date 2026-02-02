@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toggle 토글 버튼</title>
+    <style>
+      img {
+        width: 200px;
+        height: 150px;
+      }
+      /* defalut */
+      .pic1 {
+        display: block;
+      }
+      .pic2 {
+        display: none;
+      }
+      /* active */
+      .pic1.active {
+        display: none;
+      }
+      .pic2.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../../01_assets/01_images/people.webp" class="pic1" />
+    <img src="../../01_assets/01_images/apple.jpg" class="pic2" />
+    <button class="toggleBtn">토글버튼</button>
+    <script>
+      // 변수 선언
+      const toggleBtn = document.querySelector(".toggleBtn");
+      const pic1 = document.querySelector(".pic1");
+      const pic2 = document.querySelector(".pic2");
+      // 실행
+      toggleBtn.addEventListener("click", () => {
+        // active가 없으면 추가
+        pic1.classList.toggle("active");
+        // active가 있으면 뺌
+        pic2.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

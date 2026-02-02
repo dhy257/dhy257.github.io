@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        border: 3px solid slateblue;
+        display: flex;
+        justify-content: center;
+      }
+      .big_box{
+        width: 200px;
+        height: 200px;
+        background-color: green;
+
+        position: relative;
+
+        /* 만일 position 안쓸거면 이렇게하고 position 삭제 */
+        /* 아래 3줄은 정중앙 배치를 위함 */
+        /* display: flex;
+        justify-content: center;  좌우 
+        align-items: center; 상하 */
+
+      }
+      .small_box{
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+
+        position: absolute;
+        left: 50px;
+        top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="big_box">
+        box1
+        <div class="small_box">box2</div>
+      </div>
+    </section>
+  </body>
+</html>

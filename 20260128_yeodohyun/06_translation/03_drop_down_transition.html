@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dropDownTransition</title>
+    <style>
+      .dropdown {
+        border: 1px solid;
+
+        width: 200px;
+        text-align: center;
+      }
+      .dropbtn_title {
+        background-color: lightblue;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+      .dropdown_content {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: lightblue;
+        /*단순히 눈에만 안보이고 존재한다*/
+        opacity: 0; 
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s;
+        /* 보이지 않을 때 클리도 안되고 접근성을 지킨다 */
+        
+      }
+      .dropdown:hover .dropdown_content {
+        opacity: 1;
+        visibility: visible;
+      }
+      .dropdown_content li a {
+        text-decoration: none;
+        color: gray;
+        display: block;
+        padding: 10px;
+      }
+      .dropdown_content li a:hover {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <!-- 메인메뉴 -->
+      <div class="dropbtn_title">드롭다운</div>
+      <!-- 서브메뉴 -->
+      <ul class="dropdown_content">
+        <li><a href="#">서브메뉴1</a></li>
+        <li><a href="#">서브메뉴2</a></li>
+        <li><a href="#">서브메뉴3</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

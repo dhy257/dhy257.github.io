@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탭 버튼 JS 버전</title>
+    <style>
+      .tab_btn {
+        display: inline-block;
+        width: 150px;
+        padding: 10px 0;
+        text-align: center;
+        cursor: pointer;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+      .tab_btn.active {
+        background-color: pink;
+        font-weight: bold;
+      }
+      .tab_content {
+        border: 1px solid #333;
+        width: 420px;
+        padding: 20px;
+        display: none;
+      }
+      .tab_content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tab_btn active" data-target="#content1">Tab1</div>
+      <div class="tab_btn" data-target="#content2">Tab2</div>
+      <div class="tab_btn" data-target="#content3">Tab3</div>
+
+      <div class="tab_content active" id="content1">
+        <h3>Tab1 Title</h3>
+        <pre>Tab1 Tab1 Tab1</pre>
+      </div>
+
+      <div class="tab_content" id="content2">
+        <h3>Tab2 Title</h3>
+        <pre>Tab2 Tab2 Tab2</pre>
+      </div>
+
+      <div class="tab_content" id="content3">
+        <h3>Tab3 Title</h3>
+        <pre>Tab3 Tab3 Tab3</pre>
+      </div>
+    </div>
+
+    <script>
+      const tabBtns = document.querySelectorAll(".tab_btn");
+      const tabContents = document.querySelectorAll(".tab_content");
+
+      // 2. 모든 버튼에 클릭 이벤트(forEach 사용)
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          
+          // 모든 버튼에서 active 클래스 제거 (분홍색 끄기)
+          tabBtns.forEach((item) => item.classList.remove("active"));
+          // 모든 내용에서 active 클래스 제거 (내용 숨기기)
+          tabContents.forEach((item) => item.classList.remove("active"));
+
+          btn.classList.add("active");
+
+          const targetSelector = btn.getAttribute("data-target");
+          document.querySelector(targetSelector).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

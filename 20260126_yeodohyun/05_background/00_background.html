@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <style>
+      section {
+        width: 1000px;
+        height: 400px;
+        border: 1px solid black;
+        background-image: url(../../01_assets/01_images/다운로드.jpg);
+        /* 비율을 유지하면서 사이즈를 채움 */
+        /* background-size: contain; */
+        background-size: cover;
+        /* 배경 반복x */
+        background-repeat: no-repeat;
+        /* 가운데로 */
+        background-position: 100% 50%;
+      }
+      article {
+        width: 1000px;
+        height: 400px;
+        border: 1px solid red;
+        background-image: url(../../01_assets/01_images/apple.jpg);
+        background-size: 500px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+      /* 
+      background-repeat: no-repeat; 배경 반복x
+      background-repeat: repeat-x; 가로로 배경 반복
+      background-repeat: repeat-y; 세로로 배경 반복
+
+      background-position: center; 가운데로 가게
+      background-position: right bottom; 오른쪽 아래로
+      background-position: 숫자px 숫자px; 좌 우(왼쪽 위가 0 0)
+      background-position: 100% 50%; 좌 우(왼0>오100 상0>하100)
+
+      background-size: cover; 배경이 잘리더라도 채움
+      background-size: contain; 비율유지, 영역안에 가득채우기
+
+      */
+    </style>
+  </head>
+  <body>
+    <!-- div와의 차이점: 블록요소인건 같지만 시멘틱태그(의미있는) -->
+    <!-- section내용이 없으면 위에 background 이미지를 넣어도 나오지 않음 -->
+    <section>1234
+      <article>6789</article>
+    </section>
+  </body>
+</html>

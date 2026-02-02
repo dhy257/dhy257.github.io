@@ -1,0 +1,57 @@
+main{
+    font-family: sans-serif;
+    /* border: 테두리 */
+    border: 1px solid lightgray;
+    /* width 가로 정함 */
+    width: 450px;
+    /* margin: 가운데정렬 */
+    margin: 0 auto;
+    /* padding: 안쪽 여백 */
+    padding: 20px;
+    /* background-color: 배경색 */
+    background-color: #f5f6f7;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+form{
+    background-color: #fff;
+    padding: 20px;
+}
+input,select{
+    /* select가 어딘지 알 수 있음 */
+    /* border: 1px solid #red */
+    border: 1px solid #ddd
+    ;
+    width: 100px;
+    padding: 12px;
+    font-size: 14px;
+    /* 빨간 테두리 바깥으로 여백 10 주겠다 */
+    margin-bottom: 10px;
+}
+/* class이름 */
+.gender{
+    width: 30px;
+}
+.email, .nation, .ver{
+    width: 300px;
+}
+.tel{
+    width: 200px;
+}
+.auth-btn, .submit-btn{
+    background-color: #2db400;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    width: 120px;
+    /* 글자색 */
+    color: #fff;
+}
+.footer-text{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}

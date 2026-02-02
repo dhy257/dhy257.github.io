@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dropbtn {
+        background-color: lightblue;
+        width: 200px;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        text-align: center;
+        padding-left: 0;
+      }
+      .dropdown_content {
+        /* 처음에는 안보이게 설정 */
+        /* 단 중요한 내용은 안가려지게 한다 */
+        display: none;
+      }
+      /* 바깥쪽에 올리면 안 쪽 내용이 보인다 */
+      .dropbtn:hover .dropdown_content {
+        /* 보이게 */
+        display: block;
+      }
+      .dropdown_content li a{
+        text-decoration: none;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="dropbtn">
+      드롭다운
+      <div class="dropdown_content">
+        <li><a href="#">서브메뉴 1</a></li>
+        <li><a href="#">서브메뉴 2</a></li>
+        <li><a href="#">서브메뉴 3</a></li>
+      </div>
+    </ul>
+  </body>
+</html>

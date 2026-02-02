@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skew</title>
+    <style>
+        .origin {
+
+        border: 1px solid;
+        width: 300px;
+        height: 400px;
+        margin: 50px;
+      }
+        .skewx{
+            /* x축으로 30도 비틀기 */
+            transform: skewX(30deg);
+        }
+        .skewy{
+            /* y축으로 15도 비틀기 */
+            transform: skewY(15deg);
+        }
+        .skewxy{
+            /* x축, y축으로 비틀기 */
+            transform: skew(-25deg, -15deg);
+        }
+    </style>
+  </head>
+  <body>
+    <h2>skew 비틀기</h2>
+    <div class="origin">
+      <div class="skewx">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+    <div class="origin">
+      <div class="skewy">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+    <div class="origin">
+      <div class="skewxy">
+        <img src="../../01_assets/01_images/warning.jpg" width="300" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

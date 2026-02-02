@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale</title>
+    <style>
+        .origin{
+            border: 1px solid;
+            width: 300px;
+            margin: 50px;
+        }
+        .scalex:hover{
+            /* 가로로 1.2배 확대 */
+            transform: scaleX(1.2);
+        }
+        .scaley:hover{
+            /* 가로로 1.5배 확대 */
+            transform: scaleY(1.5);
+        }
+        .scale:hover{
+            /* 가로로 0.7 확대 */
+            transform: scale(0.7);
+        }
+    </style>
+</head>
+<body>
+    <h2>scale 확대 축소</h2>
+    <div class="origin">
+        <div class="scalex"><img src="../../01_assets/01_images/apple.jpg" width="300" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="scaley"><img src="../../01_assets/01_images/apple.jpg" width="300" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="scale"><img src="../../01_assets/01_images/apple.jpg" width="300" alt=""></div>
+    </div>
+</body>
+</html>

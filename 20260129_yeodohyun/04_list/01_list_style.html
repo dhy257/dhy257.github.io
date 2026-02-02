@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      ul li {
+        line-height: 30px;
+      }
+      /* 짝수선택 */
+      ul li:nth-child(even) {
+        color: blue;
+      }
+      /* 짝수선택 */
+      ul li:nth-child(odd) {
+        color: red;
+      }
+      /* 내용 덮어쓰기 */
+      ul li:nth-child(1) {
+        color: green;
+      }
+      ul li:nth-child(3n + 2) {
+        background-color: yellowgreen;
+      }
+      ul li:nth-child(n + 3) {
+        font-weight: bold;
+      }
+      ul li:nth-child(n + 3) {
+        color: gray;
+        font-weight: bold;
+      }
+      ul li:nth-child(3n) {
+        color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>파스타 면의 종류</h3>
+    <ul>
+      <li>스파게티</li>
+      <li>스파게티</li>
+      <li>스파게티</li>
+      <li>스파게티</li>
+      <li>스파게티</li>
+      <li>스파게티</li>
+      <li>스파게티</li>
+      <li>스파게티</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .player {
+        /* 16:9비율이라 9/16하면 나옴 */
+        padding-top: 56.25%;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <figure class="player">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/So84QFZWYOQ?si=jaGOtIEwJIF_e6Gz"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <figcaption>비디오 설명(필요 시)</figcaption>
+    </figure>
+  </body>
+</html>

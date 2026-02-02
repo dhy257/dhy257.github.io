@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Background_Scroll</title>
+    <style>
+      /* 와일드 카드 문자(전체선택): 바깥여백 없애기 */
+      * {
+        margin: 0;
+        /* 스크롤이 부드럽게 */
+        scroll-behavior: smooth;
+      }
+      h3 {
+        font-size: 70px;
+        /* 글자 두께 */
+        font-weight: 800px;
+        /* 줄 간격 */
+        line-height: 700px;
+        /* line-height: 700px; 
+            이거 대신 section height 조정가능
+            단, 글자는 위에 고정됨 */
+        text-align: center;
+        color: aliceblue;
+      }
+      .section1 {
+        height: 700px;
+        /* background img가 아닌 건 속성도 같이 사용하기 위함 */
+        /* 이미지, 반복x, 가로로 50%이동, 세로로 0(맨위), 고정(배경은 고정 스크롤은 내려감) */
+        background: url(../../01_assets/01_images/back1.jpg) no-repeat 50% 0 fixed;
+        /* 이미지 가득 채워지게 */
+        background-size: cover;
+        /* 50% 0의 의미:
+            x축 50%: center 가운데
+            y축 0: top 맨 위에 
+            background-attachment: fixed;
+            */
+      }
+      .section2 {
+        height: 700px;
+        background: url(../../01_assets/01_images/back2.jpg) no-repeat 50% 0 / cover scroll;
+        /* background-size: cover;  위에 /cover 도 가능 */
+      }
+
+      .section3 {
+        height: 700px;
+        background: url(../../01_assets/01_images/back3.jpg) no-repeat 50% 0 scroll;
+        background-size: cover;
+      }
+      .section4 {
+        height: 700px;
+        background: url(../../01_assets/01_images/back4.jpg) no-repeat 50% 0 scroll;
+        background-size: cover;
+      }
+      /* nav */
+      nav {
+        height: 70px;
+        border: solid red;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 30px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        display: inline;
+      }
+      a {
+        text-decoration: none;
+        padding: 10px 25px; /* 버튼 안쪽 여백 (상하 좌우) */
+        background-color: #333; /* 기본 배경 */
+        color: white; /* 기본 글자색 */
+        border: 1px solid #333; /* 테두리 */
+      }
+      /* 마우스 올렸을 때 효과 */
+      a:hover {
+        background-color: aliceblue;
+        color: blue;
+      }
+      a.top {
+        background-color: transparent; /* 배경 없애기 */
+        border: 2px solid white; /* 테두리 변경 */
+        color: white;
+        padding: 15px;
+        border-radius: 50px; /* 둥글게 */
+
+        /* 화면 우측 하단에 고정 */
+        position: fixed;
+        bottom: 2vh;
+        right: 2vh;
+      }
+      a.top:hover {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="section1">
+        <nav>
+          <h2>커뮤니티 메뉴</h2>
+          <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#section2">자유게시판</a></li>
+            <li><a href="#section3">갤러리</a></li>
+            <li><a href="#section4">문의하기</a></li>
+          </ul>
+        </nav>
+        <h3>WEB FRONTEND</h3>
+      </section>
+      <section class="section2" id="section2">
+        <h3>WEB FRONTEND</h3>
+      </section>
+      <section class="section3" id="section3">
+        <h3>WEB FRONTEND</h3>
+      </section>
+      <section class="section4" id="section4">
+        <h3>WEB FRONTEND</h3>
+        <a href="#" class="top">맨 위로</a>
+      </section>
+    </div>
+  </body>
+</html>

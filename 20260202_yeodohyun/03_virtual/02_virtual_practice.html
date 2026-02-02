@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소 선택자 지정</title>
+    <style>
+      li {
+        padding: 10px;
+      }
+      .itemD::after {
+        margin-left: 10px;
+        content: "NEW!";
+        background-color: red;
+        color: white;
+      }
+      .itemF::after,
+      .itemH::after {
+        margin-left: 10px;
+        color: white;
+        content: "품절!!";
+        background-color: green;
+      }
+      .itemA::before,
+      .itemG::before {
+        margin-right: 10px;
+        background: pink;
+        content: "주문폭주!!";
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>제품 목록</h1>
+      <ul>
+        <li class="itemA">제품 A</li>
+        <li class="itemB">제품 B</li>
+        <li class="itemC">제품 C</li>
+        <li class="itemD">제품 D</li>
+        <li class="itemE">제품 E</li>
+        <li class="itemF">제품 F</li>
+        <li class="itemG">제품 G</li>
+        <li class="itemH">제품 H</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation03</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        border: 5px dotted red;
+        overflow: hidden;
+
+        /* 이미지만 보이게 */
+        max-width: 1000px;
+        margin: auto;
+      }
+      ul {
+        display: flex;
+        width: 4000px;
+        height: 350px;
+
+        animation: slidAni 8s infinite ease-in-out;
+      }
+      li {
+        width: 1000px;
+        height: 350px;
+      }
+      li:nth-child(1) {
+        /* Git에 올릴때 경로 설정
+        /images/파일이름.jpg // 안되고
+        ./ ../ 사용해야함 
+        */
+        background: url(../../01_assets/01_images/back1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      li:nth-child(2) {
+        background: url(../../01_assets/01_images/back2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      li:nth-child(3) {
+        background: url(../../01_assets/01_images/back3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      li:nth-child(4) {
+        background: url(../../01_assets/01_images/back4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      @keyframes slidAni {
+        /* 총 시간에서 %단위로 설정 */
+        0% {
+          transform: translate(0);
+        }
+        /* 왼쪽으로 이동 */
+        25% {
+          transform: translateX(-1000px);
+        }
+        50% {
+          transform: translate(-2000px);
+        }
+        75% {
+          transform: translate(-3000px);
+        }
+        /* 0으로 돌아오게 */
+        100% {
+          transform: translate(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+  </body>
+</html>

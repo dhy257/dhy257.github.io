@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탭 버튼 css</title>
+    <style>
+        input[name='tab_group']{
+            display: none;
+        }
+        .tab_btn{
+            display: inline-block;
+            width: 150px;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+            background-color: #eee;
+            border: 1px solid #ccc;
+        }
+        .tab_content{
+            border: 1px solid #333;
+            width: 420px;
+            padding: 20px;
+            display: none;
+            
+        }
+        /* 체크된 라디오 버튼의 '다음'라벨 스타일 변경 */
+        input#tab1:checked + label,
+        input#tab2:checked + label,
+        input#tab3:checked + label{
+            background-color: pink;
+            font-weight: bold;
+        }
+        /* 체크된 라디오 버튼의 '형제' 중 해당 컨텐츠만 보여준다 */
+        #tab1:checked ~ #content1,
+        #tab2:checked ~ #content2,
+        #tab3:checked ~ #content3{
+            display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <!-- 라디오 버튼 글부(하나만 선택하기 위해 동일한 name을 가져야한다) -->
+      <input type="radio" name="tab_group" id="tab1" checked />
+      <label for="tab1" class="tab_btn">Tab1</label>
+
+      <input type="radio" name="tab_group" id="tab2" />
+      <label for="tab2" class="tab_btn">Tab2</label>
+
+      <input type="radio" name="tab_group" id="tab3" />
+      <label for="tab3" class="tab_btn">Tab3</label>
+      <!-- 탭 내용들(라디오 버튼들과 형제 관계여야 한다) -->
+       <div class="tab_content" id="content1">
+        <h3>Tab1 Title</h3>
+        <pre>Tab1 Tab1 Tab1</pre>
+       </div>
+
+       <div class="tab_content" id="content2">
+        <h3>Tab2 Title</h3>
+        <pre>Tab2 Tab2 Tab2</pre>
+       </div>
+
+       <div class="tab_content" id="content3">
+        <h3>Tab3 Title</h3>
+        <pre>Tab3 Tab3 Tab3</pre>
+       </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        width: 400px;
+        height: 150px;
+        background-color: lightblue;
+
+        display: flex;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+      .box2{
+        border: 2px solid red;
+        /* 개별적인 콘텐츠 아이템의 정렬 */
+        align-self: flex-end;
+      }
+      .box3{
+        border: 2px solid blue;
+        margin-left: 160px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      div1
+      <!-- div.클래스명 하고 엔터치면 알아서 쳐짐 -->
+      <div class="box2">div2</div>
+      <div class="box3">div3</div>
+    </section>
+  </body>
+</html>

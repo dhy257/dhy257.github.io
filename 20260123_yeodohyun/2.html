@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회워가입</title>
+    <style>
+        .first{
+            max-width: 100%;
+            width: 320px;
+            background-color: rgb(236, 236, 236);
+            border: 5px;
+           
+        }
+        fieldset{
+            background-color: white;
+            border: 5px;
+        }
+        p{
+            color: gray;
+        }
+        input[type="year"]{
+                height: 40px;
+                width: 100px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+
+        }
+        select[type="month"]{
+                height: 40px;
+                width: 80px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+        }
+        input[type="day"]{
+                height: 40px;
+                width: 100px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+        }
+        input[type="email"]{
+                height: 40px;
+                width: 250px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+
+        }
+        input[type="phonenumber"]{
+                height: 30px;
+                width: 180px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+
+        }
+        select[type="worldnumber"]{
+                height: 35px;
+                width: 285px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+        }
+        input[tittle="제출"]{
+                height: 30px;
+                width: 285px;
+                box-sizing: border-box;
+                border: none;
+                background-color: rgb(39, 223, 64);
+                color: white;
+        }
+        input[type="button"]{
+                height: 29px;
+                width: 100px;
+                box-sizing: border-box;
+                border: none;
+                background-color: rgb(39, 223, 64);
+                color: white;
+        }
+        input[type="OTP"]{
+                height: 29px;
+                width: 285px;
+                box-sizing: border-box;
+                border: 1px solid lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="first">
+        <h3 style="text-align: center;">회원가입</h3>
+        <fieldset>
+            <h3 style="font-size: 15px">생년월일</h3>
+            <label for="year"><input type="year" placeholder="년(4자)"></label>
+            <select type="month" name="month" id="path">
+                <option value="">월</option>
+                <option value="1월">1월</option>
+                <option value="2월">2월</option>
+                <option value="3월">3월</option>
+                <option value="4월">4월</option>
+                <option value="5월">5월</option>
+                <option value="6월">6월</option>
+                <option value="7월">7월</option>
+                <option value="8월">8월</option>
+                <option value="9월">9월</option>
+                <option value="10월">10월</option>
+                <option value="11월">11월</option>
+                <option value="12월">12월</option>
+            </select>
+            <label for="day"><input type="day" placeholder="일"></label>
+
+            <h3>성별</h3>
+            <label for="man">
+                <input type="radio" id="man" name="gender" vale="g_1">남자
+            </label>
+            <label for="woman">
+                <input type="radio" id="woman" name="gender" vale="g_2">여자
+            </label>
+            <label for="noselected">
+                <input type="radio" id="noselected" name="gender" vale="g_3">선택안함
+            </label>
+            <h3>이메일(선택)</h3>
+            <label for="email"><input type="email" placeholder="example@email.com" min="0" max="120" size="30"></label>
+            <h3>휴대전화</h3>
+            <label for="worldnumber">
+                <select type="worldnumber" name="worldnumber" id="path">
+                    <option value="82">대한민국(KR) +82</option>
+                    <option value="1">미국(US)/캐나다(CA) +1</option>
+                    <option value="81">일본(JP) +81</option>
+                    <option value="86">중국(CN) +86</option>
+                    <option value="44">영국(GB) +44</option>
+                    <option value="49">독일(DE) +49</option>
+                    <option value="33">프랑스(FR) +33</option>
+                    <option value="61">호주(AU) +61</option>
+                    <option value="63">필리핀 +63</option>
+                    <option value="7">러시아/카자흐스탄 +7</option>
+                    <option value="34">스페인 +34</option>
+                    <option value="64">뉴질랜드 +64</option>
+                    <option value="65">싱가포르 +65</option>
+                    <option value="66">태국 +66</option>
+                    <option value="84">베트남 +84</option>
+                    <option value="852">홍콩 +852</option>
+                    <option value="886">대만 + 886</option>
+​
+
+                    <option value="91">인도 +91</option>
+                    <option value="971">아랍에미리트 +971</option>
+                </select>
+</label>
+            <label for="phonenumber" id="phonenumber">
+                <br>
+                <input type="phonenumber" placeholder="전화번호 입력">
+                <input type="button" tittle="수신" value="인증번호받기">
+                <br>
+            </label>
+            <label for="OTP">
+                <input type="OTP" placeholder="인증번호를 입력하세요." style="width:200;">
+            </label>
+            <form>
+                <input type="submit" tittle="제출" value="가입하기">
+            </form>
+
+        </fieldset>
+        <br>
+        <p style="font-size: 9px; text-align: center;">이용약관 | 개인정보처리방침 | 고객센터</p>
+        <p style="font-size: 8px; text-align: center; line-height:1px;">©2026 Sample Corp.</p>
+    </fieldset>
+</body>
+
+</html>

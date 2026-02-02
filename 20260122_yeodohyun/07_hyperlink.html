@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyper Link</title>
+  </head>
+  <body>
+    <h1>텍스트 링크 만들기</h1>
+    <p>
+      문단 태그 내용 안에서
+      <a href="https://www.naver.com/" target="_blank">네이버</a>로 이동
+    </p>
+    <!-- 
+        a태그 속성 정리
+        _blank: 링크 내용이 새 창이나 새 탭에서 열립니다.
+        _self: target속성의 기본 값(defalut)
+        _parent: 프레임을 사용했을 때 링크 내용을 부모 프레임에 표시
+        _top: 프레임에서 벗어난 링크 내용을 전체 화면에 표시
+    -->
+    <a href="https://www.google.com/" target="_blank"
+      >구글 사이트
+      <img src="../../01_assets/01_images/chrome_logo.jpg" width="80" alt="구글 로고"
+    /></a>
+    <br />
+    <iframe src="../20260122_yeodohyun/06_browser.html" width="800px" height="150px" frameborder="1"></iframe><br>
+    <!-- 구글 지도 퍼가기 -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313885.0284397104!2d125.23282706608165!3d35.79463398199156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca39aaf5af01b%3A0x660743aa0774103d!2z7JeQ7J207L2Y7JWE7Lm0642w66-4IO2ZjeuMgO2VmeybkA!5e0!3m2!1sko!2skr!4v1769068971121!5m2!1sko!2skr" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+    <!-- 네이버카페 -->
+    <iframe src="https://cafe.naver.com/bigbluesky" frameborder="0"></iframe>
+  </body>
+</html>

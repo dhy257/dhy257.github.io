@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbucks Copy</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Main */
+      .main_page {
+        
+        /* 뒷배경 실제 이미지 쓸거면
+        background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2025/2026_new_year_promotion_bg_251226.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        이미지 중앙
+        display: flex;
+        align-items: center;
+        */
+        background-color: red;
+        /* 글씨 색 */
+        color: white;
+      }
+      .main_prod {
+        /* 이미지와 제품텍스트 구역 가로배치 */
+        display: flex;
+        /* 중앙 */
+        justify-content: center;
+        align-items: center;
+        /* 제품텍스트 자연스럽게 배치 */
+        margin: auto;
+      }
+      /* 제품이미지 애니메이션 적용 */
+      .prod_img img {
+        animation: slideItem 2s ease;
+      }
+      /* Animation */
+      @keyframes slideItem {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      /* prod */
+      .prod_title {
+        font-size: 1em;
+        font-weight: bold;
+
+        margin-bottom: 1em;
+      }
+      .prod_name {
+        font-size: 2em;
+        font-weight: bold;
+
+        margin-bottom: 1rem;
+      }
+      .prod_desc {
+        font-size: 1em;
+        line-height: 1.5;
+
+        margin-bottom: 1em;
+      }
+      /* btn */
+      .btn {
+        text-decoration: none;
+
+        display: inline-block;
+        padding: 10px 20px;
+
+        border: 2px solid white;
+        border-radius: 5px;
+
+        color: white;
+        font-size: 1em;
+
+        transition: 1s ease;
+      }
+      .btn:hover {
+        background-color: white;
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="main_page">
+      <div class="main_prod">
+        <div class="prod_img">
+          <img
+            src="https://image.istarbucks.co.kr/upload/common/img/main/2025/2026_new_year_promotion_beans_251226.png"
+            alt="starbucks_bean_img"
+          />
+        </div>
+
+        <div class="prod_detail">
+          <p class="prod_title">NOTES OF JUJUBE & VIBRANT HERBS</p>
+          <h1 class="prod_name">루나 뉴이어 블렌드 250g</h1>
+          <p class="prod_desc">
+            대추와 허브의 깊은 풍미에 달콤한 시럽 피니시, 풍부한 바디감으로<br />
+            설날의 따뜻함을 담은 시즌 한정 원두입니다.
+          </p>
+          <a href="#" class="btn">자세히 보기</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

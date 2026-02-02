@@ -1,10 +1,15 @@
 /* -----------------------  ---------------------------- */
+@font-face {
+  font-family: "Pretendard";
+  src: url(../01_assets/03_fonts/public/static/Pretendard-Black.otf);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
   scroll-behavior: smooth;
+  font-family: Pretendard;
 }
 /* ----------------------- Header ---------------------------- */
 header {
@@ -87,10 +92,36 @@ nav a:hover {
 /* ----------------------- Main ---------------------------- */
 main {
   background-color: coral;
-  height: 1200px;
+  height: auto;
 }
 /* ----------------------- Container ---------------------------- */
 .container {
+  /* 부모 요소 안에서 가로 중앙에 배치합니다 */
+  margin: 0 auto;
+  
+  /* 모바일 환경에서 양옆에 최소한의 여백을 줍니다 */
+  padding: 0 20px;
+  
+  /* box-sizing을 설정하면 padding이 너비에 포함되어 계산이 편해집니다 */
+  box-sizing: border-box;
+}
+
+.title_desc{
+  background: lightblue;
+  justify-content: center;
+}
+.sec_tit {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.desc {
+  text-align: center;
+  font-size: 1rem;
+}
+/* ----------------------- Study Section ---------------------------- */
+
+.study_section .container {
   display: flex;
   justify-content: start;
   width: fit-content;
@@ -100,24 +131,43 @@ main {
   gap: 20px;
   padding: 20px;
 }
-/* ----------------------- 각 그룹카드(폴더) ---------------------------- */
+
+/* ----------------------- Group Card(폴더) ---------------------------- */
 .group_card {
   min-width: 200px; /* 너무 작아지지 않게 최소 너비 지정 */
   background-color: white;
   padding: 15px;
   border-radius: 8px;
 }
-/* ----------------------- 그룹카드 내부 날짜(제목) ---------------------------- */
-.date {
-}
-/* ----------------------- 그룹카드 내부 링크 리스트 ---------------------------- */
+/* ----------------------- Group Card 내부 날짜(제목) ---------------------------- */
+/* .date {
+} */
+/* ----------------------- Group Card 내부 링크 리스트 ---------------------------- */
 .group_card ul {
   /* 점 제거 */
   list-style: none;
 }
 .group_card ol {
-  list-style-type: decimal;
+  /* list-style-type: decimal; */
   list-style-position: inside;
+  padding-left: 10px; /* 쉬운 구분을 위해 들여쓰는 것처럼 보이게 */
+
+  max-height: 150px;  /* 5개 고정으로 보이게 */
+  overflow-y: auto;   /* 내용이 넘치면 세로 스크롤 생성 */
+  padding-right: 5px; /* 스크롤바와 글자 사이 간격 */
+}
+/* 스크롤 디자인 */
+.group_card ol::-webkit-scrollbar {
+  width: 6px;
+}
+/* 스크롤 바 */
+.group_card ol::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+/* 전체 스크롤 */
+.group_card ol::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
 }
 .group_card li {
   /* li사이 간격 추가 */
@@ -129,6 +179,214 @@ main {
 }
 .group_card a:hover {
   color: red;
+}
+/* ----------------------- Project Section ---------------------------- */
+/* 1. 전체 레이아웃 (PC 기준) */
+.project_container {
+  display: flex;
+  gap: 30px;
+  height: 450px; /* 전체 높이 고정 */
+  
+  /* ★ 핵심 1: 화면이 커져도 너무 넓어지지 않게 가로 제한 + 중앙 정렬 */
+  max-width: 1100px;
+  margin: 30px auto 50px auto; 
+}
+
+/* 2. [왼쪽] 슬라이더 영역 */
+.project_slider {
+  flex: 4; /* 너비 40% */
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* 슬라이더 버튼 */
+.slider_btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s;
+  z-index: 10;
+}
+.slider_btn:hover {
+  color: lightblue;
+}
+
+/* 카드 뷰포트 */
+.card_viewport {
+  flex: 1; 
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.card_wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* 개별 프로젝트 카드 */
+.project_card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 내용 수직 중앙 정렬 */
+  text-align: center;
+  
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.project_card.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 5;
+}
+
+.project_card a {
+  text-decoration: none;
+  color: #333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project_card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.project_card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  word-break: keep-all;
+}
+
+/* 3. [오른쪽] 결과물 표시 영역 */
+.project_result_display {
+  flex: 6; /* 너비 60% */
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+.result_group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  
+  opacity: 0;
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
+
+.result_group.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+.result_group img {
+  flex: 1;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 반응형 (모바일) */
+@media (max-width: 768px) {
+.project_container {
+    /* 1. 세로 배치인데 순서를 뒤집음 (결과물이 위, 슬라이더가 아래) */
+    flex-direction: column-reverse; 
+    height: auto; /* 높이 유동적으로 */
+    gap: 15px;
+  }
+
+  /* 영역 너비 꽉 차게 */
+  .project_slider, 
+  .project_result_display {
+    width: 100%;
+    flex: none; 
+  }
+
+  /* 결과물 영역 높이 */
+  .project_result_display {
+    height: 300px; 
+  }
+
+  /* 슬라이더 영역 높이 줄임 (설명이 빠지므로) */
+  .project_slider {
+    height: 100px; 
+    padding: 10px;
+  }
+
+  /* ★ 핵심 2: 모바일에서 설명(p태그) 숨기기 */
+  .project_card p {
+    display: none; 
+  }
+
+  /* 제목 마진 제거 및 폰트 크기 조정 */
+  .project_card h3 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+  
+}
+/* ----------------------- 반응형 (태블릿 이하) ----------------------- */
+@media (max-width: 1024px) {
+  .project_item {
+    flex-direction: column; /* 세로로 배치 */
+    height: auto;
+    align-items: center;
+  }
+  
+  .project_card, 
+  .project_result {
+    width: 100%; /* 가로 꽉 차게 */
+    flex: none;  /* 비율 해제 */
+  }
+
+  .project_card {
+    height: 250px;
+  }
+
+  .project_result {
+    height: 300px;
+    opacity: 1; /* 모바일에서는 항상 보이게 설정 */
+    transform: none;
+    margin-top: 20px;
+  }
 }
 /* ----------------------- Footer ---------------------------- */
 footer {
