@@ -42,3 +42,19 @@ if (projectContainer) {
     });
   }
 }
+
+//클릭 시 텍스트 복사 기능
+const copyBtns = document.querySelectorAll('.copy_btn');
+
+copyBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const textToCopy = btn.getAttribute('data-text');
+    
+    // 클립보드에 복사
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      alert(`복사되었습니다: ${textToCopy}`);
+    }).catch(err => {
+      console.error('복사 실패:', err);
+    });
+  });
+});

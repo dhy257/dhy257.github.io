@@ -1,4 +1,4 @@
-/* Study Viewer (Sidebar & Content) 예제 영역 */
+/* ================================== Study Viewer (Sidebar & Content) 예제 영역 ================================== */
 /* 예제가 보이는 영역 */
 .viewer_main {
   height: calc(100vh - 70px);
@@ -89,6 +89,7 @@ summary.sub-folder:hover {
   border-left: 1px solid #333333;
   padding-left: 15px;
   margin-left: 15px;
+  margin-top: 5px;
 }
 /* 파일끼리 간격 */
 .sidebar li {
@@ -112,10 +113,10 @@ summary.sub-folder:hover {
   transform: translateX(5px);
 }
 
-/* [Content View] */
+/* ================================== Content View ================================== */
 .content_view {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #eeeeee;
   /* 기준1 */
   position: relative;
 }

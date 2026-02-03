@@ -10,7 +10,6 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/reset.css" />
-    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
     <link rel="stylesheet" href="./css/style2.css" />
   </head>
   <body>
@@ -37,23 +36,114 @@
     </header>
     <!------------------------- Main ------------------------->
     <main>
-      <!----------------------- 첫 배경 ---------------------------->
-      <!-- <figure class="slider">
-        <img src="./01_assets/01_images/back1.jpg" width="100%" alt="" />
-      </figure> -->
       <!-- 각 세션 그룹 묶음 -->
       <section class="content">
         <!-- 간단 소개 -->
-        <section class="display_section" id="about_section">
+        <section class="about_section" id="about_section">
           <div class="title_desc">
-            <h2 class="sec_tit">About</h2>
-            <p class="desc">ABOUT</p>
+            <h2 class="sec_tit">ABOUT ME</h2>
+            <p class="desc">사용자 경험을 중요시하는 웹 개발자 여도현입니다.</p>
           </div>
-          <div class="container">
-            ABOUT <br />
-            ABOUT <br />
-            ABOUT <br />
-            ABOUT <br />
+
+          <div class="container about_container">
+            <div class="profile_area">
+              <div class="profile_img">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="profile_info">
+                <h3>여도현 <span>Do Hyun Yeo</span></h3>
+                <p><i class="fa-solid fa-calendar"></i> 2000.01.24</p>
+                <p><i class="fa-solid fa-location-dot"></i> Korea</p>
+              </div>
+            </div>
+
+            <div class="intro_area">
+              <h3>"안녕하세요, 끊임없이 성장하는 개발자입니다."</h3>
+              <p>
+                자기소개 부분입니다.<br />
+                자기소개 부분입니다.<br />
+                자기소개 부분입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 사용 기술 -->
+        <section class="skils_section" id="skils_section">
+          <div class="title_desc">
+            <h2 class="sec_tit">SKILLS</h2>
+            <p class="desc">사용해본 기술들</p>
+          </div>
+
+          <div class="container skills_container">
+            <div class="skill_category" id="Frontend">
+              <h3>Frontend & Mobile</h3>
+              <div class="skill_list">
+                <div class="skill_card">
+                  <i class="fa-brands fa-html5" style="color: #e34f26"></i>
+                  <span>HTML5</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-css3-alt" style="color: #1572b6"></i>
+                  <span>CSS3</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-js" style="color: #f7df1e"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill_card">
+                  <i
+                    class="fa-solid fa-mobile-screen"
+                    style="color: #42a5f5"
+                  ></i>
+                  <span>Dart / Flutter</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-android" style="color: #3ddc84"></i>
+                  <span>Kotlin</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill_category" id="Backend">
+              <h3>Backend & Basic</h3>
+              <div class="skill_list">
+                <div class="skill_card">
+                  <i class="fa-brands fa-python" style="color: #3776ab"></i>
+                  <span>Python</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-java" style="color: #f89820"></i>
+                  <span>Java</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-solid fa-c" style="color: #00599c"></i>
+                  <span>C</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-solid fa-fire" style="color: #ffca28"></i>
+                  <span>Firebase</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill_category" id="Tools">
+              <h3>Tools</h3>
+              <div class="skill_list">
+                <div class="skill_card">
+                  <i class="fa-brands fa-git-alt" style="color: #f05032"></i>
+                  <span>Git</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-github" style="color: #fff"></i>
+                  <span>GitHub</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-figma" style="color: #f24e1e"></i>
+                  <span>Figma</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -130,6 +220,47 @@
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- 연락 -->
+        <section class="contact_section" id="contact_section">
+          <div class="title_desc">
+            <h2 class="sec_tit">CONTACT</h2>
+            <p class="desc">안녕하세요.</p>
+          </div>
+
+          <div class="container contact_container">
+            <!-- 실제 복사되는 내용은 data-text -->
+            <div class="contact_card copy_btn" data-text="test@example.com">
+              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+              <h3>Email</h3>
+              <p>test@example.com</p>
+              <span class="tooltip">Click to Copy</span>
+            </div>
+
+            <div class="contact_card copy_btn" data-text="010-1234-5678">
+              <div class="icon"><i class="fa-solid fa-phone"></i></div>
+              <h3>Phone</h3>
+              <p>010-1234-5678</p>
+              <span class="tooltip">Click to Copy</span>
+            </div>
+
+            <a
+              href="https://github.com/dhy257"
+              target="_blank"
+              class="contact_card link_btn"
+            >
+              <div class="icon"><i class="fa-brands fa-github"></i></div>
+              <h3>GitHub</h3>
+              <p>Visit Profile</p>
+            </a>
+
+            <a href="#" target="_blank" class="contact_card link_btn">
+              <div class="icon"><i class="fa-solid fa-link"></i></div>
+              <h3>Blog / Etc</h3>
+              <p>Visit Site</p>
+            </a>
           </div>
         </section>
       </section>

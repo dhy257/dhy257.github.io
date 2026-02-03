@@ -20,7 +20,7 @@ border-color: #333333; */
 }
 
 body {
-  background-color: #141414;
+  background-color: #eeeeee;
   color: #eeeeee;
   font-size: 1em;
   line-height: 1.5;
@@ -37,7 +37,7 @@ ol {
   list-style: none;
 }
 
-/* Header */
+/* ================================== Header ================================== */
 header {
   /* 위에 붙게 */
   position: sticky;
@@ -46,7 +46,7 @@ header {
   width: 100%;
   height: 70px;
   /* 헤더 색 */
-  background-color: rgba(10, 10, 10, 0.85); /* 반투명 검정 */
+  background-color: #0a0a0a; /* 반투명 검정 */
   backdrop-filter: blur(10px); /* 블러 효과 */
 
   border-bottom: 1px solid #333333;
@@ -67,7 +67,7 @@ header {
   text-transform: uppercase;
 }
 
-/* Nav */
+/* ================================== Nav ================================== */
 
 nav.active {
   display: block;
@@ -114,10 +114,11 @@ nav a:hover::after {
   display: none;
 }
 
-/* Main Layout & Container */
+/* ================================== Main Layout & Container ================================== */
 main {
   /* background-color: #ffffff; */
-  background-color: #141414;
+  background-color: #eeeeee; /* 반투명 검정 */
+  backdrop-filter: blur(10px); /* 블러 효과 */
   min-height: 100vh;
   /* 기준2 */
   position: relative;
@@ -127,18 +128,19 @@ main {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 40px 20px 40px;
   padding: 40px 20px;
-  background-color: #141414;
+  background-color: #333333;
+  border-radius: 0 0 5px 5px;
 }
 
 /* Section Common Title 각 제목 및 설명 */
 .title_desc {
-  margin: 40px;
+  margin: 20px 40px 0 40px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: #0a0a0a;
   padding: 10px;
+  border-radius: 5px 5px 0 0;
 }
 /* 제목 */
 .sec_tit {
@@ -155,8 +157,121 @@ main {
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
+/* ================================== ABOUT Styles ================================== */
+.about_container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-/* Project Slider Section 프로젝트 카드*/
+.profile_area {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.profile_img {
+  width: 120px;
+  height: 120px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #888;
+}
+
+.profile_info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #eee;
+}
+
+.profile_info h3 span {
+  font-size: 1rem;
+  color: #888;
+  display: block;
+  font-weight: normal;
+}
+
+.profile_info p {
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.intro_area {
+  flex: 2;
+  min-width: 300px;
+  color: #eee;
+}
+
+.intro_area h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ff5500; /* 포인트 컬러 */
+}
+
+.intro_area p {
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* ================================== SKILLS Styles ================================== */
+.skills_container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+
+.skill_category h3 {
+  color: #ff5500;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.skill_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill_card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  padding: 15px 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.skill_card:hover {
+  border-color: #ff5500;
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.skill_card i {
+  font-size: 1.5rem;
+}
+.skill_card span {
+  font-weight: bold;
+  color: #eee;
+}
+
+/* ================================== Project Slider Section 프로젝트 카드 ==================================*/
 .project_container {
   display: flex;
   gap: 20px;
@@ -167,8 +282,8 @@ main {
 .project_slider {
   /* 비율4 차지 */
   flex: 4;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #141414;
+  background: #0a0a0a73;
+  border: 1px solid #333333;
   /* 모서리 살짝 둥글게 */
   border-radius: 5px;
   padding: 30px;
@@ -233,7 +348,7 @@ main {
   height: 100%;
 }
 
-/* Project Card 프로젝트 카드 */
+/* ================================== Project Card 프로젝트 카드 ================================== */
 .project_card {
   /* 기준 5 - 감싸는 wrapper 기준 좌상단*/
   position: absolute;
@@ -291,7 +406,7 @@ main {
   /* 우측 6할 */
   flex: 6;
   /* 사진 뒷 배경 색 */
-  background-color: #000;
+  background-color: transparent;
   border: 1px solid #333333;
   border-radius: 5px;
   /* 기준6 */
@@ -339,7 +454,72 @@ main {
 .project_result_display:hover img {
   filter: grayscale(0%);
 }
-/* Footer */
+/* ================================== CONTACT Styles ================================== */
+.contact_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.contact_card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.contact_card:hover {
+  background: #ff5500;
+  border-color: #ff5500;
+}
+
+/* 호버 시 텍스트 색상 반전 (가독성) */
+.contact_card:hover .icon,
+.contact_card:hover h3,
+.contact_card:hover p {
+  color: #000;
+}
+
+.contact_card .icon {
+  font-size: 2rem;
+  color: #ff5500;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.contact_card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #eee;
+}
+
+.contact_card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* 툴팁 (복사 안내) */
+.tooltip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.7rem;
+  background: #000;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact_card:hover .tooltip {
+  opacity: 1;
+}
+/* ================================== Footer ================================== */
 footer {
   background-color: #0a0a0a;
   border-top: 1px solid #333333;
