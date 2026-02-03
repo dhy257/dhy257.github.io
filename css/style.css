@@ -13,16 +13,19 @@
 }
 /* ----------------------- Header ---------------------------- */
 header {
-  position: sticky;
+position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background-color: #222;
-
+  height: 70px;
+  background-color: rgba(10, 10, 10, 0.85); /* 반투명 검정 */
+  backdrop-filter: blur(10px);              /* 블러 효과 */
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
-  z-index: 100;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 40px; /* 좌우 여백 */
 }
 /* ----------------------- logo ---------------------------- */
 .logo a {
@@ -30,6 +33,8 @@ header {
   font-size: 1.2rem;
   line-height: 60px;
   margin-left: 1rem;
+
+  text-transform: uppercase; /* 대문자 강조 */
 }
 /* ----------------------- nav ---------------------------- */
 nav {
@@ -91,22 +96,23 @@ nav a:hover {
 }
 /* ----------------------- Main ---------------------------- */
 main {
-  background-color: coral;
+  background-color: f4f4f4;
   height: auto;
+  overflow: hidden;
 }
 /* ----------------------- Container ---------------------------- */
 .container {
   /* 부모 요소 안에서 가로 중앙에 배치합니다 */
   margin: 0 auto;
-  
+
   /* 모바일 환경에서 양옆에 최소한의 여백을 줍니다 */
   padding: 0 20px;
-  
+
   /* box-sizing을 설정하면 padding이 너비에 포함되어 계산이 편해집니다 */
   box-sizing: border-box;
 }
 
-.title_desc{
+.title_desc {
   background: lightblue;
   justify-content: center;
 }
@@ -152,8 +158,8 @@ main {
   list-style-position: inside;
   padding-left: 10px; /* 쉬운 구분을 위해 들여쓰는 것처럼 보이게 */
 
-  max-height: 150px;  /* 5개 고정으로 보이게 */
-  overflow-y: auto;   /* 내용이 넘치면 세로 스크롤 생성 */
+  max-height: 150px; /* 5개 고정으로 보이게 */
+  overflow-y: auto; /* 내용이 넘치면 세로 스크롤 생성 */
   padding-right: 5px; /* 스크롤바와 글자 사이 간격 */
 }
 /* 스크롤 디자인 */
@@ -181,18 +187,17 @@ main {
   color: red;
 }
 /* ----------------------- Project Section ---------------------------- */
-/* 1. 전체 레이아웃 (PC 기준) */
 .project_container {
   display: flex;
   gap: 30px;
   height: 450px; /* 전체 높이 고정 */
-  
-  /* ★ 핵심 1: 화면이 커져도 너무 넓어지지 않게 가로 제한 + 중앙 정렬 */
+
+  /* 화면이 커져도 너무 넓어지지 않게 가로 제한 + 중앙 정렬 */
   max-width: 1100px;
-  margin: 30px auto 50px auto; 
+  margin: 30px auto 50px auto;
 }
 
-/* 2. [왼쪽] 슬라이더 영역 */
+/* 슬라이더 영역 */
 .project_slider {
   flex: 4; /* 너비 40% */
   display: flex;
@@ -201,7 +206,7 @@ main {
   background-color: #fff;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -215,14 +220,21 @@ main {
   padding: 10px;
   transition: color 0.3s;
   z-index: 10;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* 원형 */
+  transition: all 0.3s ease; /* 부드러운 애니메이션 */
 }
 .slider_btn:hover {
-  color: lightblue;
+  color: coral;
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.2);
 }
 
 /* 카드 뷰포트 */
 .card_viewport {
-  flex: 1; 
+  flex: 1;
   overflow: hidden;
   height: 100%;
   position: relative;
@@ -241,12 +253,12 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center; /* 내용 수직 중앙 정렬 */
   text-align: center;
-  
+
   opacity: 0;
   transform: translateX(20px);
   transition: all 0.4s ease;
@@ -282,7 +294,17 @@ main {
   color: #666;
   word-break: keep-all;
 }
+.project_card.active h3:hover {
+  /* 텍스트 덩어리가 위로 5px 둥실 떠오름 */
+  transform: translateY(-5px);
+}
 
+.project_card.active a:hover h3 {
+  color: coral;
+
+  text-decoration: underline;
+  text-underline-offset: 8px; /* 밑줄과 글자 사이 간격 */
+}
 /* 3. [오른쪽] 결과물 표시 영역 */
 .project_result_display {
   flex: 6; /* 너비 60% */
@@ -290,7 +312,7 @@ main {
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .result_group {
@@ -299,12 +321,12 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   display: flex;
   gap: 10px;
   padding: 10px;
   box-sizing: border-box;
-  
+
   opacity: 0;
   transition: all 0.5s ease;
   visibility: hidden;
@@ -321,72 +343,7 @@ main {
   height: 100%;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* 반응형 (모바일) */
-@media (max-width: 768px) {
-.project_container {
-    /* 1. 세로 배치인데 순서를 뒤집음 (결과물이 위, 슬라이더가 아래) */
-    flex-direction: column-reverse; 
-    height: auto; /* 높이 유동적으로 */
-    gap: 15px;
-  }
-
-  /* 영역 너비 꽉 차게 */
-  .project_slider, 
-  .project_result_display {
-    width: 100%;
-    flex: none; 
-  }
-
-  /* 결과물 영역 높이 */
-  .project_result_display {
-    height: 300px; 
-  }
-
-  /* 슬라이더 영역 높이 줄임 (설명이 빠지므로) */
-  .project_slider {
-    height: 100px; 
-    padding: 10px;
-  }
-
-  /* ★ 핵심 2: 모바일에서 설명(p태그) 숨기기 */
-  .project_card p {
-    display: none; 
-  }
-
-  /* 제목 마진 제거 및 폰트 크기 조정 */
-  .project_card h3 {
-    margin-bottom: 0;
-    font-size: 1.5rem;
-  }
-  
-}
-/* ----------------------- 반응형 (태블릿 이하) ----------------------- */
-@media (max-width: 1024px) {
-  .project_item {
-    flex-direction: column; /* 세로로 배치 */
-    height: auto;
-    align-items: center;
-  }
-  
-  .project_card, 
-  .project_result {
-    width: 100%; /* 가로 꽉 차게 */
-    flex: none;  /* 비율 해제 */
-  }
-
-  .project_card {
-    height: 250px;
-  }
-
-  .project_result {
-    height: 300px;
-    opacity: 1; /* 모바일에서는 항상 보이게 설정 */
-    transform: none;
-    margin-top: 20px;
-  }
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 /* ----------------------- Footer ---------------------------- */
 footer {
@@ -410,47 +367,90 @@ footer {
   color: black;
 }
 /* ----------------------- Variable Window ---------------------------- */
-@media (min-width: 768px) {
+/* 1. 모바일 & 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+  .project_container {
+    flex-direction: column-reverse;
+    height: auto; /* 높이 고정 해제 */
+    gap: 20px;
+  }
+
+  /* 영역 너비 꽉 차게 설정 */
+  .project_slider,
+  .project_result_display {
+    flex: none;
+    width: 100%;
+  }
+
+  /* 결과물(이미지) 영역 높이 */
+  .project_result_display {
+    height: 300px;
+  }
+
+  /* 슬라이더 영역 높이 (제목과 화살표가 보이도록 확보) */
+  .project_slider {
+    height: 150px;
+    padding: 10px;
+  }
+
+  /* [카드 내부] */
+  .project_card {
+    /* 내용 수직 중앙 정렬 */
+    justify-content: center;
+    top: 0;
+  }
+
+  /* 모바일에서는 설명(p) 숨기고 제목만 표시 */
+  .project_card p {
+    display: none;
+  }
+
+  /* 제목 스타일 조정 */
+  .project_card h3 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: #222; /* 배경이 흰색이므로 검은 글씨 */
+    display: block;
+  }
 }
 
+/* 2. PC 화면 (1024px 이상) */
 @media (min-width: 1024px) {
+  /* [헤더] 햄버거 버튼 숨김 */
   .menu_toggle_btn {
     display: none;
   }
-  /* 2. Nav 태그: 모바일의 absolute(띄우기) 속성을 해제하고 헤더 흐름에 맞춤 */
+
+  /* [네비게이션] 가로형 메뉴 복구 */
   nav {
-    display: block !important; /* JS로 토글된 display:none 무시하고 강제 보임 */
-    position: static; /* absolute 해제 -> 헤더 안에 자리를 잡음 */
-    width: auto; /* 가로 100% 해제 -> 내용물만큼만 차지 */
-    background: transparent; /* 배경색 제거 */
+    display: block !important; /* JS 토글 무시하고 항상 보임 */
+    position: static; /* 헤더 안에 배치 */
+    width: auto;
+    background: transparent;
     opacity: 1;
-    margin-right: 20px; /* 오른쪽 여백 */
+    margin-right: 20px;
   }
 
-  /* 3. UL 태그: 세로 정렬(column)을 가로 정렬(row)로 변경 */
   nav ul {
     display: flex;
-    flex-direction: row; /* ★핵심: 가로로 나열 */
-    position: static; /* ul에 걸려있던 absolute도 해제 */
-    gap: 30px; /* 메뉴 사이 간격 */
+    flex-direction: row; /* 가로 정렬 */
+    position: static;
+    gap: 30px;
     padding: 0;
   }
 
-  /* 4. LI 태그: 모바일용 여백/테두리 제거 */
   nav li {
     margin: 0;
     padding: 0;
     border: none;
   }
 
-  /* 5. A 태그: 폰트 스타일 */
   nav a {
-    color: #fff; /* 헤더 배경이 어두우므로 흰색 글씨 */
+    color: #fff;
     font-size: 1rem;
     font-weight: bold;
   }
 
-  /* 헤더: 로고와 메뉴가 수직 중앙에 오도록 설정 */
   header {
     align-items: center;
   }

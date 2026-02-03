@@ -1,0 +1,168 @@
+
+/* Study */
+.viewer_main {
+  height: calc(100vh - 60px); /* 전체 높이 - 헤더 높이 */
+  background-color: #f4f4f4;
+  overflow: hidden; /* 스크롤바 중복 방지 */
+}
+
+.viewer_container {
+  display: flex; /* 좌우 배치 */
+  height: 100%;
+  width: 100%;
+  max-width: 100%; /* 기존 container 제한 해제 */
+  padding: 0;      /* 기존 padding 제거 */
+}
+
+/* [왼쪽] 사이드바 */
+.sidebar {
+  width: 300px; /* 너비 고정 */
+  background-color: white;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* 화면 줄어도 찌그러지지 않게 */
+}
+
+.sidebar_header {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.sidebar_header h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sidebar_content {
+  flex: 1; /* 남은 높이 다 차지 */
+  overflow-y: auto; /* 내용 많으면 스크롤 */
+  /* 가장 위의 폴더가 style.css의 group_card padding 15px가 적용되지 않게 하기 위함 */
+  padding: 10px !important;
+}
+
+/* 사이드바 내부 리스트 스타일 재정의 */
+.sidebar .group_card {
+  padding: 0;
+  box-shadow: none; /* 그림자 제거 */
+}
+
+.sidebar details {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.sidebar summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
+  list-style: none; /* 기본 삼각형 제거 (선택) */
+}
+.sidebar summary:hover {
+  color: lightblue;
+}
+
+.sidebar ol {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.sidebar li {
+  margin-bottom: 5px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9rem;
+  display: block;
+  padding: 3px 0;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* [오른쪽] 미리보기 영역 */
+.content_view {
+  flex: 1; /* 남은 공간 모두 차지 */
+  position: relative;
+  background-color: #fff;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 10; /* 안내문구보다 위에 */
+}
+
+/* 안내 문구 (처음에만 보임) */
+.placeholder_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #aaa;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+/* 모바일 반응형 (세로 배치) */
+@media (max-width: 768px) {
+  .viewer_container {
+    flex-direction: column; /* 위아래 배치 */
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: 40%; /* 목록은 화면의 40%만 */
+    border-right: none;
+    border-bottom: 5px solid #ddd;
+  }
+  
+  .content_view {
+    height: 60%;
+  }
+}
+summary.sub-folder {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  list-style: none; /* 삼각형 제거 */
+}
+
+summary.sub-folder:hover {
+  color: #000;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* 내부 리스트 들여쓰기 */
+ol.sub-list {
+  padding-left: 15px !important; /* 왼쪽으로 더 밀어넣기 */
+  border-left: 2px solid #eee;   /* 구조선 추가 (선택사항) */
+  margin-left: 5px;
+}
+
+/* 서브 폴더 안의 li 간격 */
+ol.sub-list li {
+  margin-bottom: 3px;
+}
+
+/* 서브 폴더 안의 링크 글씨 */
+ol.sub-list a {
+  font-size: 0.85rem; /* 파일명은 살짝 작게 */
+  color: #777;
+}
+
+ol.sub-list a:hover {
+  color: coral;
+}

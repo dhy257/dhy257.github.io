@@ -1,0 +1,144 @@
+/* Study Viewer (Sidebar & Content) 예제 영역 */
+/* 예제가 보이는 영역 */
+.viewer_main {
+  height: calc(100vh - 70px);
+  background-color: #0a0a0a;
+  overflow: hidden;
+}
+
+.viewer_container {
+  display: flex;
+  height: 100%;
+  border-top: 1px solid #333333;
+}
+/* 왼쪽 사이드 바(폴더 및 파일 정리) */
+.sidebar {
+  width: 280px;
+  background-color: #141414;
+  border-right: 1px solid #333333;
+  /* 세로 배치 */
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+/* 사이드바 헤더(Study List)부분 */
+.sidebar_header {
+  padding: 20px;
+  border-bottom: 1px solid #333333;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+.sidebar_header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff5500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+/* 예제 리스트들 */
+.sidebar_content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px !important;
+}
+.sidebar details {
+  /* 폴더끼리 간격 */
+  margin-bottom: 15px;
+}
+
+/* 날짜 폴더 */
+.sidebar summary.date {
+  font-size: 1rem;
+  font-weight: bold;
+  /* 날짜 폴더 색 */
+  color: #eeeeee;
+  cursor: pointer;
+  padding: 5px 10px;
+  /* 폴더 배경색(연하게) */
+  background: rgba(255, 255, 255, 0.05);
+  /* 왼쪽 강조 테두리 */
+  border-left: 2px solid transparent;
+  transition: all 0.3s;
+}
+.sidebar summary.date:hover {
+  /* 강조 테두리 색 */
+  border-left-color: #ff5500;
+  /* 강조 배경 색 */
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 서브 폴더 스타일 */
+summary.sub-folder {
+  /* 기본 색 회색 */
+  color: #888888;
+  font-size: 0.9rem;
+  margin: 5px 0 5px 10px;
+  cursor: pointer;
+  /* 폴더 정리를 숫자 넘버링 해뒀으니 빼기 */
+  list-style: none;
+}
+summary.sub-folder:hover {
+  /* 선택시 메인 색 -> 강조 */
+  color: #eeeeee;
+}
+
+/* 파일 리스트 스타일 */
+.sidebar ol {
+  /* 들여쓰기 처럼 보기 편하게 */
+  border-left: 1px solid #333333;
+  padding-left: 15px;
+  margin-left: 15px;
+}
+/* 파일끼리 간격 */
+.sidebar li {
+  margin-bottom: 4px;
+}
+/* 기본 파일들 색 */
+.sidebar a {
+  display: block;
+  font-size: 0.85rem;
+  color: #888888;
+  padding: 4px 8px;
+  transition: all 0.2s;
+}
+/* 파일에 마우스 호버 */
+.sidebar a:hover {
+  /* 파일 강조 색 */
+  color: #ff5500;
+  /* 파일 강조 배경 색 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* 오른쪽으로 살짝 이동 */
+  transform: translateX(5px);
+}
+
+/* [Content View] */
+.content_view {
+  flex: 1;
+  background-color: #ffffff;
+  /* 기준1 */
+  position: relative;
+}
+.content_view iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* 하단 공백 제거 */
+  display: block; 
+}
+/* 안내문구 */
+.placeholder_text {
+  /* 기준1 기준 중간 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #0a0a0a;
+  text-align: center;
+}
+.placeholder_text p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

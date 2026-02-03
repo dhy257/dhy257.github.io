@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 30px;
+        }
+        .item{
+            background-color: #ff9644;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .item{
+            /* 기본 사이즈 3단 배열 */
+            /* 위 container에 간격30이 존재해서 안맞음
+            따라서 계산해서 빼줘야함 */
+            width: calc(33.33% - 15px);
+        
+        }
+        /* 중간 화면 768이하 2단배열 */
+        @media (max-width:768px){
+            .item{
+                /* 50%에서 간격(30)의 반인 15 제외 */
+                width: calc(50% - 15px);
+                background-color: #a0d279;
+            }
+        }
+        /* 작은 화면 */
+        @media (max-width:320px) {
+            .item{
+                width: 100%;
+                background-color: #47c252;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

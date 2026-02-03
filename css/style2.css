@@ -1,0 +1,511 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url(../01_assets/03_fonts/public/static/Pretendard-Black.otf);
+}
+/* 
+bg-color: #0a0a0a;
+panel-color: #141414;
+text-main: #eeeeee;
+text-sub: #888888;
+accent-color: #ff5500;
+border-color: #333333; */
+* {
+  /* 기본설정 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 스크롤 부드럽게 */
+  scroll-behavior: smooth;
+  font-family: "Pretendard", sans-serif; /* 폰트 통일 */
+}
+
+body {
+  background-color: #141414;
+  color: #eeeeee;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+a {
+  /* 밑줄 제거 */
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+ol {
+  /* 점제거 */
+  list-style: none;
+}
+
+/* Header */
+header {
+  /* 위에 붙게 */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  /* 헤더 색 */
+  background-color: rgba(10, 10, 10, 0.85); /* 반투명 검정 */
+  backdrop-filter: blur(10px); /* 블러 효과 */
+
+  border-bottom: 1px solid #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 1000;
+  padding: 0 40px; /* 좌우 여백 */
+}
+
+.logo a {
+  color: #eeeeee;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  /* 대문자 강조 */
+  text-transform: uppercase;
+}
+
+/* Nav */
+
+nav.active {
+  display: block;
+}
+nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: #eeeeee;
+  font-size: 0.9rem;
+  font-weight: 600;
+  /* 대문자 강조 */
+  text-transform: uppercase;
+  transition: all 0.3s;
+  /* 기준1 */
+  position: relative;
+}
+
+/* 메뉴 호버 시 하이라이트 효과 */
+nav a:hover {
+  color: #ff5500 !important;
+  border-bottom: 1px solid #ff5500;
+}
+
+/* nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff5500;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+} */
+
+/* Mobile Toggle 숨김 처리*/
+.menu_toggle_btn {
+  display: none;
+}
+
+/* Main Layout & Container */
+main {
+  /* background-color: #ffffff; */
+  background-color: #141414;
+  min-height: 100vh;
+  /* 기준2 */
+  position: relative;
+
+  background-size: 50px 50px;
+  background-position: center top;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #141414;
+}
+
+/* Section Common Title 각 제목 및 설명 */
+.title_desc {
+  margin: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+}
+/* 제목 */
+.sec_tit {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #eeeeee;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+/* 설명 */
+.desc {
+  color: #888888;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Project Slider Section 프로젝트 카드*/
+.project_container {
+  display: flex;
+  gap: 20px;
+  height: 500px;
+}
+
+/* Slider UI 왼쪽 프로젝트 카드 */
+.project_slider {
+  /* 비율4 차지 */
+  flex: 4;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #141414;
+  /* 모서리 살짝 둥글게 */
+  border-radius: 5px;
+  padding: 30px;
+  /* 기준3 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* 왼쪽 강조 테두리 */
+  border-left: 4px solid #ff5500;
+}
+
+/* 화살표 버튼 */
+.slider_btn {
+  /* 기준3 - 프로젝트 카드 기준 */
+  /* 오른쪽 아래로 배치 */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /* 배경 투명 */
+  background: transparent;
+  border: 1px solid #333333;
+  color: #888888;
+  /* 버튼 크기 */
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+  /* 가운데 배치 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 버튼 요소를 다르게 배치하여 잘 클릭되게 함 */
+  z-index: 20;
+}
+
+.prev_btn {
+  /* 좌측 버튼 우측에서 띄우기 */
+  right: 70px;
+}
+/* 버튼 호버시 색상 */
+.slider_btn:hover {
+  background-color: #ff5500;
+  border-color: #ff5500;
+  color: #000;
+}
+
+/* Card Viewport */
+.card_viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* 기준4 */
+  position: relative;
+}
+
+.card_wrapper {
+  /* 기준5 */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Project Card 프로젝트 카드 */
+.project_card {
+  /* 기준 5 - 감싸는 wrapper 기준 좌상단*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 사라지고 생기는 효과 */
+  opacity: 0;
+  /* 아래에서 위로 등장 */
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  /* 중앙배치 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* 왼쪽 정렬 */
+  text-align: left;
+}
+/* 프로젝트 카드 선택시 자바스크립트 */
+.project_card.active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 10;
+}
+/* 프로젝트명 */
+.project_card h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #eeeeee;
+  /* 설명과 간격 */
+  margin-bottom: 20px;
+}
+/* 프로젝트 설명 */
+.project_card p {
+  /* color: #888888; */
+  color: #eeeeeecc;
+  font-size: 1rem;
+  /* 설명이 제목을 넘지 않게 */
+  max-width: 80%;
+  line-height: 1.6;
+}
+
+/* 텍스트 호버 효과 */
+/* .project_card a {
+  display: block;
+} */
+.project_card.active a:hover h3 {
+  color: #ff5500;
+}
+
+/* 결과물 사진 영역 */
+.project_result_display {
+  /* 우측 6할 */
+  flex: 6;
+  /* 사진 뒷 배경 색 */
+  background-color: #000;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  /* 기준6 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 장식용 그리드 라인 */
+.project_result_display::before {
+  content: "";
+  /* 기준6 - 사진영역 기준 좌상단*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 뒷배경 사이즈 */
+  background-size: 20px 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.result_group {
+  /* 기준6 - 사진영역 기준 묶음이 꽉차게*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* 사라졌다 생기는 거처럼 */
+  display: flex;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+/* 기본 보임 */
+.result_group.active {
+  opacity: 1;
+}
+/* 사진 */
+.result_group img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* filter: grayscale(100%);
+  transition: filter 0.5s; */
+}
+.project_result_display:hover img {
+  filter: grayscale(0%);
+}
+/* Footer */
+footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #333333;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+.top_btn {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+  background-color: transparent;
+  border: 2px solid #333333;
+  text-decoration: none;
+  color: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+}
+.top_btn:hover {
+  background-color: #ff5500;
+  color: #eeeeee;
+}
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .project_container {
+    flex-direction: column-reverse; /* 결과물이 위, 텍스트가 아래 */
+    height: auto;
+  }
+
+  .project_slider,
+  .project_result_display {
+    width: 100%;
+    flex: none;
+  }
+
+  .project_result_display {
+    height: 250px;
+  }
+
+  .project_slider {
+    height: 180px;
+    border-left: none;
+    /* 프로젝트 카드 테두리(모바일) */
+    border-top: 4px solid #ff5500;
+  }
+
+  .project_card h3 {
+    font-size: 1.8rem;
+  }
+  .project_card p {
+    display: none;
+  } /* 설명 숨김 */
+
+  .slider_btn {
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .prev_btn {
+    right: 50px;
+  }
+
+  /* Viewer Mobile */
+  .viewer_container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: 35%;
+    border-right: none;
+    /* 예제 화면과 파일화면 사이 테두리(모바일) */
+    border-bottom: 1px solid #333333;
+  }
+  .content_view {
+    height: 65%;
+  }
+
+  /* Header Mobile */
+  .menu_toggle_btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1100;
+  }
+  .menu_toggle_btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #eeeeee;
+    margin-bottom: 6px;
+    transition: all 0.3s;
+  }
+  .menu_toggle_btn span:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Nav */
+  nav {
+    /* 평소에는 안 보임 (모바일) */
+    display: none;
+
+    /* 헤더 바로 아래에 위치 */
+    position: absolute;
+    top: 70px; /* header 높이만큼 띄움 */
+    left: 0;
+    width: 100%;
+    background: #141414; /* 패널 색상과 일치 */
+    border-bottom: 1px solid #333333;
+    z-index: 999;
+  }
+
+  /* JS로 active 클래스가 붙으면 보임 (토글 눌렀을 때) */
+  nav.active {
+    display: block;
+    animation: slideDown 0.3s ease-out forwards; /* 부드럽게 내려오는 애니메이션 */
+  }
+
+  /* 메뉴 내려오는 애니메이션 */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    gap: 0;
+  }
+
+  nav li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* 메뉴 사이 얇은 선 */
+  }
+
+  nav a {
+    color: #eeeeee;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block; /* 클릭 영역 확대 */
+    padding: 20px 0;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff5500;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}

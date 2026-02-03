@@ -1,0 +1,37 @@
+/* Nav */
+
+nav.active {
+  display: block;
+}
+
+nav ul {
+  display: flex;
+
+  gap: 40px;
+}
+
+nav a {
+  color: #eeeeee;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  /* 대문자 강조 */
+
+  text-transform: uppercase;
+
+  transition: all 0.3s;
+
+  /* 기준1 */
+
+  position: relative;
+}
+
+/* 메뉴 호버 시 하이라이트 효과 */
+
+nav a:hover {
+  color: #ff5500 !important;
+
+  border-bottom: 1px solid #ff5500;
+}

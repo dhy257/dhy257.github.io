@@ -10,7 +10,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="./css/style2.css" />
   </head>
   <body>
     <!-------------------------  ------------------------->
@@ -22,9 +23,9 @@
       <nav>
         <!------------------------- 메인 메뉴바 ------------------------->
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Study</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about_section">About</a></li>
+          <li><a href="./study.html">Study</a></li>
+          <li><a href="#contact_section">Contact</a></li>
         </ul>
       </nav>
       <!------------------------- 토글 메뉴바 ------------------------->
@@ -37,13 +38,13 @@
     <!------------------------- Main ------------------------->
     <main>
       <!----------------------- 첫 배경 ---------------------------->
-      <figure class="slider">
+      <!-- <figure class="slider">
         <img src="./01_assets/01_images/back1.jpg" width="100%" alt="" />
-      </figure>
-
+      </figure> -->
+      <!-- 각 세션 그룹 묶음 -->
       <section class="content">
         <!-- 간단 소개 -->
-        <section class="display_section">
+        <section class="display_section" id="about_section">
           <div class="title_desc">
             <h2 class="sec_tit">About</h2>
             <p class="desc">ABOUT</p>
@@ -56,433 +57,7 @@
           </div>
         </section>
 
-        <!-- 실습 모음 -->
-        <section class="study_section">
-          <div class="title_desc">
-            <h2 class="sec_tit">Study</h2>
-            <p class="desc">지금까지 실습한 예제들</p>
-          </div>
-
-          <div class="container">
-            <!-- 20260122 -->
-            <div class="group_card">
-              <details open>
-                <summary class="date"></summary>
-                <ol>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/01_index.txt"
-                      target="_blank"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/02_index.html"
-                      target="_blank"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/03_tag_practice.html"
-                      target="_blank"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/04_semantic_tag.html"
-                      target="_blank"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/05_table.html"
-                      target="_blank"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/06_browser.html"
-                      target="_blank"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="./20260122_yeodohyun/07_hyperlink.html"
-                      target="_blank"
-                    ></a>
-                  </li>
-                </ol>
-              </details>
-            </div>
-            <!-- 20260123 -->
-            <div class="group_card">
-              <details open>
-                <summary class="date"></summary>
-                <ol>
-                  <li>
-                    <a href="./20260123_yeodohyun/1.html" target="_blank"></a>
-                  </li>
-                  <li>
-                    <a href="./20260123_yeodohyun/2.html" target="_blank"></a>
-                  </li>
-                </ol>
-              </details>
-            </div>
-            <!-- 20260126 -->
-            <div class="group_card">
-              <details open>
-                <summary class="date"></summary>
-                <ol>
-                  <li>
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/01_form_css/01_naver_form.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/01_form_css/02_readonly.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/02_block_inline/01_change_to_block_inline.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/02_block_inline/02_shadow.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/03_box/01_border.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="/20260126_yeodohyun/03_box/02_box_model.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="/20260126_yeodohyun/03_box/03_box_sizeng.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/04_hover/01_hover_button.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/05_background/00_background.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/05_background/01_background_scroll.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/05_background/02_background_scroll2.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/05_background/03_background_scroll3.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/06_gradient/01_gradient01.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/06_gradient/02_gradient02.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/06_gradient/03_gradient03.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/06_gradient/04_gradient04.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/06_gradient/05_gradient05.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/06_gradient/06_gradient06.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/07_float/01_float01.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/07_float/02_float02.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/07_float/03_float03.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/08_grid/01_grid.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/08_grid/02_grid.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/08_grid/02_grid_image.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/08_grid/03_grid.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/08_grid/04_grid.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260126_yeodohyun/08_grid/05_grid_image02.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-                  </li>
-                </ol>
-              </details>
-            </div>
-            <!-- 20260127 -->
-            <div class="group_card">
-              <details open>
-                <summary class="date"></summary>
-                <ol>
-                  <li>
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/01_position/01_position_absolute.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/01_position/02_position_relative.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/01_position/03_position_advanced.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/02_flex/01_flex_box.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/02_flex/02_flex_box2.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/02_flex/03_flex_advanced.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/03_copy_site/01_copy_site.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/03_copy_site/02_copy_site2.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-
-                    <details>
-                      <summary style="cursor: pointer; color: blue"></summary>
-                      <ol>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/04_drop_down/01_drop_down.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="./20260127_yeodohyun/04_drop_down/02_drop_down_advanced.html"
-                            target="_blank"
-                          ></a>
-                        </li>
-                      </ol>
-                    </details>
-                  </li>
-                </ol>
-              </details>
-            </div>
-            <!-- 20260128 -->
-            <!-- <div class="group_card">
-          <details open>
-            <summary class="date"></summary>
-            <ol>
-              <li><a href=""></a></li>
-            </ol>
-          </details>
-        </div> -->
-            <!-- 20260129 -->
-            <!-- <div class="group_card">
-          <details open>
-            <summary class="date"></summary>
-            <ol>
-              <li><a href=""></a></li>
-            </ol>
-          </details>
-        </div> -->
-            <!-- 20260130 -->
-            <!-- <div class="group_card">
-          <details open>
-            <summary class="date"></summary>
-            <ol>
-              <li><a href=""></a></li>
-            </ol>
-          </details>
-        </div> -->
-            <!-- 20260202 -->
-          </div>
-        </section>
-
         <!-- 프로젝트 모음 -->
-        <!-- <section class="proj_section">
-          <div class="title_desc">
-            <h2 class="sec_tit">Project</h2>
-            <p class="desc">지금까지 작업한 프로젝트 모음입니다.</p>
-          </div>
-
-          <div class="container">
-            GitPumTa <br>
-            Fresh Check <br>
-          </div>
-        </section> -->
         <section class="proj_section">
           <div class="title_desc">
             <h2 class="sec_tit">Project</h2>
@@ -493,6 +68,7 @@
             <div class="project_container">
               <div class="project_slider">
                 <button class="slider_btn prev_btn">
+                  <!-- 왼 화살표 -->
                   <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
@@ -500,6 +76,7 @@
                   <div class="card_wrapper">
                     <div class="project_card active" data-index="0">
                       <a href="https://github.com/GitPumTa" target="_blank">
+                        <!-- <a href="https://www.figma.com/proto/sgWNV0fCTFITBI9xfnuAwC/%EA%B9%83%ED%92%88%ED%83%80?node-id=13-3&p=f&t=SbxdUOii1pTz4eTR-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=13%3A3" target="_blank"> -->
                         <h3>GitPumTa</h3>
                         <p>
                           깃허브 커밋 기반 학습·개발 목표<br />
@@ -524,6 +101,7 @@
                 </div>
 
                 <button class="slider_btn next_btn">
+                  <!-- 우 화살표 -->
                   <i class="fa-solid fa-chevron-right"></i>
                 </button>
               </div>
@@ -531,8 +109,12 @@
               <div class="project_result_display">
                 <div class="result_group active" data-index="0">
                   <img
-                    src="./01_assets/01_images/back1.jpg"
-                    alt="GitPumTa 결과물"
+                    src="./01_assets/01_images/레포 추가.png"
+                    alt="GitPumTa 결과물1"
+                  />
+                  <img
+                    src="./01_assets/01_images/타이머(시작 후 화면).ver2.png"
+                    alt="GitPumTa 결과물2"
                   />
                 </div>
 
@@ -553,7 +135,7 @@
       </section>
     </main>
     <!------------------------- Footer ------------------------->
-    <footer>footer</footer>
+    <footer><p>ⓒ2026 Do Hyun Yeo. All rights reserved.</p></footer>
     <!-- 맨 위로 가는 버튼 -->
     <a href="#" class="top_btn">TOP</a>
     <script src="./js/main.js"></script>

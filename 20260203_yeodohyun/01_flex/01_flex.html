@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex: 1;</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #111;
+        color: #fff;
+      }
+      header {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7),
+            url(../01_assets/01_images/apple.jpg)
+          )
+          center no-repeat;
+          background-size: cover;
+      }
+      nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+      }
+      .add_email{
+        background-color: #fff;
+        border-radius: 4px;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        /* overflow: hidden; */
+      }
+      .add_email input{
+        border: 0;
+        outline: 0;
+        margin-left: 20px;
+        /* flex: 1 1 auto; 적용된거임
+        grow shrink basis 이 3가지가 적용됨
+        grow:1; 남은 빈 공간을 모두 채우며 커짐
+        shrink:1; 공간이 부족할 때 다른 요소와 함께 줄어듬
+        basis:0; 요소의 기본 크기0으로 간주, 처음부터 여백을 공평하게 배분 */
+        flex: 1;
+      }
+      .add_email button{
+        /* 테두리 없애기 */
+        border: 0;
+        background-color: #db0001;
+        color: #fff;
+        font-style: 16px;
+        padding: 15px 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>원두정기구독</h1>
+        <div>
+          <button class="lang">😊한국어</button>
+          <button>로그</button>
+        </div>
+      </nav>
+      <div class="header_content">
+        <h2>매일 특별한 커피 타임</h2>
+        <h3>고객님의 취향에 맞게 스페결 커피를 즐겨 보세요</h3>
+        <p>
+          이메일 주소를 보내시면 구독 안내문과 새로운 소식들을 보내드립니다.
+        </p>
+        <form action="" class="add_email">
+          <input type="email" placeholder="이메일 주소" required />
+          <button type="submit">궁금해요</button>
+        </form>
+      </div>
+    </header>
+  </body>
+</html>
