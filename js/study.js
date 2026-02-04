@@ -92,19 +92,15 @@ const studyData = [
   {
     folderName: "20260203_yeodohyun",
     date: "20260203",
-    files: [
-      "01_flex/01_flex.html",
-      "02_calc/01_calc.html",
-      "01_faq.html",
-    ],
+    files: ["01_flex/01_flex.html", "02_calc/01_calc.html", "01_faq.html"],
   },
 ];
 
 /* ==================================================================== */
 const studyContainer = document.getElementById("study_list_container");
-const sidebarHeader = document.getElementById('sidebar_header_toggle');
-const sidebar = document.querySelector('.sidebar');
-const pathDisplay = document.getElementById('current_path_display');
+const sidebarHeader = document.getElementById("sidebar_header_toggle");
+const sidebar = document.querySelector(".sidebar");
+const pathDisplay = document.getElementById("current_path_display");
 
 /* ================================== 렌더링 함수 ================================== */
 function renderStudyList() {
@@ -115,8 +111,11 @@ function renderStudyList() {
   studyData.forEach((data, index) => {
     // 1. 큰 날짜 폴더 생성
     const details = document.createElement("details");
-    // 첫 번째 폴더 열어두기
-    if (index === 0) details.open = true;
+
+    // 첫 번째 폴더이면서 + PC 화면(768px 초과)일 때만 열어두기
+    if (index === 0 && window.innerWidth > 768) {
+      details.open = true;
+    }
 
     const summary = document.createElement("summary");
     summary.className = "date";
@@ -128,7 +127,7 @@ function renderStudyList() {
     const groups = {};
 
     data.files.forEach((filePath) => {
-      const parts = filePath.split("/"); 
+      const parts = filePath.split("/");
 
       if (parts.length > 1) {
         // 하위 폴더가 있는 경우
@@ -203,19 +202,19 @@ renderStudyList();
 
 // 4-1. 파일 리스트 클릭 이벤트
 if (studyContainer) {
-  studyContainer.addEventListener('click', function (e) {
+  studyContainer.addEventListener("click", function (e) {
     // A 태그(파일)를 클릭했을 때만 동작
-    if (e.target.tagName === 'A') {
+    if (e.target.tagName === "A") {
       const clickedFile = e.target;
 
       // Active 클래스 토글 (현재 선택 강조)
-      const allLinks = studyContainer.querySelectorAll('a');
-      allLinks.forEach((link) => link.classList.remove('active'));
-      clickedFile.classList.add('active');
+      const allLinks = studyContainer.querySelectorAll("a");
+      allLinks.forEach((link) => link.classList.remove("active"));
+      clickedFile.classList.add("active");
 
       // Placeholder(안내 문구) 숨기기
-      const placeholders = document.querySelectorAll('.placeholder_text');
-      placeholders.forEach(ph => ph.style.display = 'none');
+      const placeholders = document.querySelectorAll(".placeholder_text");
+      placeholders.forEach((ph) => (ph.style.display = "none"));
 
       // 다중 폴더 경로 추적 및 표시
       let pathParts = [];
@@ -223,10 +222,10 @@ if (studyContainer) {
 
       // 상위 요소들을 타고 올라가며 details(폴더명) 찾기
       while (currentElement) {
-        if (currentElement.id === 'study_list_container') break;
+        if (currentElement.id === "study_list_container") break;
 
-        if (currentElement.tagName === 'DETAILS') {
-          const summary = currentElement.querySelector('summary');
+        if (currentElement.tagName === "DETAILS") {
+          const summary = currentElement.querySelector("summary");
           if (summary) {
             pathParts.unshift(summary.innerText.trim());
           }
@@ -236,16 +235,16 @@ if (studyContainer) {
 
       // 최종 경로 조합 (폴더1 / 폴더2 / 파일명)
       const fileName = clickedFile.innerText.trim();
-      const fullPath = pathParts.join(' / ') + ' / ' + fileName;
+      const fullPath = pathParts.join(" / ") + " / " + fileName;
 
       if (pathDisplay) {
         pathDisplay.innerText = fullPath;
-        pathDisplay.classList.add('active'); // CSS에서 보이게 처리
+        pathDisplay.classList.add("active"); // CSS에서 보이게 처리
       }
 
       // 모바일 환경: 선택 후 리스트 접기
       if (window.innerWidth <= 768) {
-        if (sidebar) sidebar.classList.remove('open');
+        if (sidebar) sidebar.classList.remove("open");
       }
     }
   });
@@ -253,35 +252,32 @@ if (studyContainer) {
 
 // 4-2. 사이드바 토글
 if (sidebarHeader) {
-  sidebarHeader.addEventListener('click', () => {
-    
+  sidebarHeader.addEventListener("click", () => {
     // 화면 너비 체크
     if (window.innerWidth <= 768) {
       // [모바일 동작] 위아래로 접기/펼치기 (기존 로직)
-      if (sidebar) sidebar.classList.toggle('open');
-      
+      if (sidebar) sidebar.classList.toggle("open");
     } else {
       // [PC 동작] 왼쪽으로 접기/펼치기 (신규 로직)
-      if (sidebar) sidebar.classList.toggle('closed');
+      if (sidebar) sidebar.classList.toggle("closed");
     }
-    
   });
 }
 
 /* ================================== 창 크기 변경 ================================== */
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // 모바일 화면으로 진입 시 (768px 이하)
   if (window.innerWidth <= 768) {
     // PC에서 쓰던 'closed' 클래스가 있다면 제거 (모바일 레이아웃 깨짐 방지)
-    if (sidebar.classList.contains('closed')) {
-      sidebar.classList.remove('closed');
+    if (sidebar.classList.contains("closed")) {
+      sidebar.classList.remove("closed");
     }
-  } 
+  }
   // PC 화면으로 진입 시 (769px 이상)
   else {
     // 모바일에서 쓰던 'open' 클래스가 있다면 제거
-    if (sidebar.classList.contains('open')) {
-      sidebar.classList.remove('open');
+    if (sidebar.classList.contains("open")) {
+      sidebar.classList.remove("open");
     }
   }
 });
