@@ -7,7 +7,7 @@
     <style>
       .faq {
         /* 가장 큰 가로 사이즈 */
-        min-width: 800px;
+        /* min-width: 800px; */
         margin: 60px auto;
       }
       .accordion {
@@ -37,11 +37,11 @@
         padding: 0 16px;
         /* 숨겨져 있다가 서서히 나옴 */
         transition: 0.3s; /* 밖으로 삐져나오는 텍스트 숨김 */
-        min-height: 0;
+        max-height: 0;
         overflow: hidden;
       }
       .accordion input:checked + label + .content {
-        min-height: 200px;
+        max-height: 200px;
         padding: 16px;
       }
       .accordion input:checked + label::after {

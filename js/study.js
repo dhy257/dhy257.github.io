@@ -1,6 +1,6 @@
-const studyContainer = document.getElementById("study_list_container");
-
-//데이터 정의
+/* ==========================================================================
+   1. 데이터 정의 (Study Data)
+   ========================================================================== */
 const studyData = [
   {
     folderName: "20260122_yeodohyun",
@@ -24,7 +24,6 @@ const studyData = [
     folderName: "20260126_yeodohyun",
     date: "20260126",
     files: [
-      // 슬래시(/)가 있으면 자동으로 내부 폴더로 인식합니다.
       "01_form_css/01_naver_form.html",
       "01_form_css/02_readonly.html",
       "02_block_inline/01_change_to_block_inline.html",
@@ -35,20 +34,16 @@ const studyData = [
     folderName: "20260127_yeodohyun",
     date: "20260127",
     files: [
-      // 01_position
       "01_position/01_position_absolute.html",
       "01_position/02_position_relative.html",
       "01_position/03_position_advanced.html",
-      // 02_flex (01_test 폴더는 비어있는 것으로 보여 제외했습니다)
       "02_flex/01_flex_box.html",
       "02_flex/02_flex_box2.html",
       "02_flex/03_flex_advanced.html",
-      // 03_copy_site
       "03_copy_site/01_copy_site.html",
       "03_copy_site/02_copy_site2.html",
       "03_copy_site/style.css",
       "03_copy_site/style2.css",
-      // 04_drop_down
       "04_drop_down/01_drop_down.html",
       "04_drop_down/02_drop_down_advanced.html",
     ],
@@ -102,12 +97,22 @@ const studyData = [
     files: [
       "01_flex/01_flex.html",
       "02_calc/01_calc.html",
-      "01_faq.html", // 폴더 없이 최상위에 있는 파일
+      "01_faq.html",
     ],
-  }
+  },
 ];
 
-// 렌더링 함수
+/* ==========================================================================
+   2. DOM 요소 선택 (전역 변수)
+   ========================================================================== */
+const studyContainer = document.getElementById("study_list_container");
+const sidebarHeader = document.getElementById('sidebar_header_toggle');
+const sidebar = document.querySelector('.sidebar');
+const pathDisplay = document.getElementById('current_path_display');
+
+/* ==========================================================================
+   3. 렌더링 함수
+   ========================================================================== */
 function renderStudyList() {
   if (!studyContainer) return;
 
@@ -116,7 +121,7 @@ function renderStudyList() {
   studyData.forEach((data, index) => {
     // 1. 큰 날짜 폴더 생성
     const details = document.createElement("details");
-    if (index === 0) details.open = true;
+    if (index === 0) details.open = true; // 첫 번째 폴더 열어두기
 
     const summary = document.createElement("summary");
     summary.className = "date";
@@ -124,31 +129,26 @@ function renderStudyList() {
 
     const ol = document.createElement("ol");
 
-    //파일들을 폴더별로 그룹화하기
+    // 파일들을 폴더별로 그룹화
     const groups = {};
 
     data.files.forEach((filePath) => {
-      const parts = filePath.split("/"); // 슬래시로 쪼개기
+      const parts = filePath.split("/"); 
 
       if (parts.length > 1) {
-        // 경로가 있는 경우
-        // 예: "folder/file.html"
-        const folderName = parts[0]; // "folder"
-        const fileName = parts[1]; // "file.html"
-
-        // 그룹이 없으면 배열 생성
+        // 하위 폴더가 있는 경우
+        const folderName = parts[0];
+        const fileName = parts[1];
         if (!groups[folderName]) groups[folderName] = [];
-
-        // 해당 그룹에 파일 추가
         groups[folderName].push({ path: filePath, name: fileName });
       } else {
-        // 그냥 파일인 경우
+        // 최상위 파일인 경우
         if (!groups["root"]) groups["root"] = [];
         groups["root"].push({ path: filePath, name: filePath });
       }
     });
 
-    // 루트 파일들 (폴더 없는 애들) 먼저 출력
+    // 2-1. 루트 파일들 출력
     if (groups["root"]) {
       groups["root"].forEach((file) => {
         const li = createListItem(data.folderName, file.path, file.name);
@@ -156,23 +156,21 @@ function renderStudyList() {
       });
     }
 
-    // 내부 폴더들 출력
+    // 2-2. 내부 폴더들 출력
     Object.keys(groups).forEach((key) => {
-      if (key === "root") return; // 루트는 이미 했으니 패스
+      if (key === "root") return;
 
-      // 서브 폴더 구조 생성 (li > details > summary + ol)
       const subLi = document.createElement("li");
       const subDetails = document.createElement("details");
-      subDetails.open = true; // 내부 폴더 기본 열림
+      subDetails.open = true;
 
       const subSummary = document.createElement("summary");
-      subSummary.className = "sub-folder"; // CSS 스타일링용 클래스
-      subSummary.textContent = ` ${key}`; // 폴더 아이콘 + 이름
+      subSummary.className = "sub-folder";
+      subSummary.textContent = ` ${key}`;
 
       const subOl = document.createElement("ol");
-      subOl.className = "sub-list"; // 들여쓰기용 클래스
+      subOl.className = "sub-list";
 
-      // 해당 폴더의 파일들 생성
       groups[key].forEach((file) => {
         const li = createListItem(data.folderName, file.path, file.name);
         subOl.appendChild(li);
@@ -190,7 +188,7 @@ function renderStudyList() {
   });
 }
 
-// 리스트 아이템(li > a) 만드는 코드
+// 리스트 아이템(li > a) 생성 함수
 function createListItem(rootFolder, fullPath, displayName) {
   const li = document.createElement("li");
   const a = document.createElement("a");
@@ -199,14 +197,80 @@ function createListItem(rootFolder, fullPath, displayName) {
   a.target = "study_frame";
   a.textContent = displayName;
 
-  a.addEventListener("click", () => {
-    const placeholder = document.querySelector(".placeholder_text");
-    if (placeholder) placeholder.style.display = "none";
-  });
-
   li.appendChild(a);
   return li;
 }
 
-//실행
+// 초기 렌더링 실행
 renderStudyList();
+
+/* ==========================================================================
+   4. 통합 이벤트 핸들러 (클릭 기능 모음)
+   ========================================================================== */
+
+// 4-1. 파일 리스트 클릭 이벤트 (위임 패턴)
+if (studyContainer) {
+  studyContainer.addEventListener('click', function (e) {
+    // A 태그(파일)를 클릭했을 때만 동작
+    if (e.target.tagName === 'A') {
+      const clickedFile = e.target;
+
+      // [기능 1] Active 클래스 토글 (현재 선택 강조)
+      const allLinks = studyContainer.querySelectorAll('a');
+      allLinks.forEach((link) => link.classList.remove('active'));
+      clickedFile.classList.add('active');
+
+      // [기능 2] Placeholder(안내 문구) 숨기기
+      const placeholders = document.querySelectorAll('.placeholder_text');
+      placeholders.forEach(ph => ph.style.display = 'none');
+
+      // [기능 3] 다중 폴더 경로 추적 및 표시
+      let pathParts = [];
+      let currentElement = clickedFile.parentElement; // li부터 시작
+
+      // 상위 요소들을 타고 올라가며 details(폴더명) 찾기
+      while (currentElement) {
+        if (currentElement.id === 'study_list_container') break;
+
+        if (currentElement.tagName === 'DETAILS') {
+          const summary = currentElement.querySelector('summary');
+          if (summary) {
+            pathParts.unshift(summary.innerText.trim());
+          }
+        }
+        currentElement = currentElement.parentElement;
+      }
+
+      // 최종 경로 조합 (폴더1 / 폴더2 / 파일명)
+      const fileName = clickedFile.innerText.trim();
+      const fullPath = pathParts.join(' / ') + ' / ' + fileName;
+
+      if (pathDisplay) {
+        pathDisplay.innerText = fullPath;
+        pathDisplay.classList.add('active'); // CSS에서 보이게 처리
+      }
+
+      // [기능 4] 모바일 환경: 선택 후 리스트 접기
+      if (window.innerWidth <= 768) {
+        if (sidebar) sidebar.classList.remove('open');
+      }
+    }
+  });
+}
+
+// 4-2. 사이드바 토글 (통합: 모바일 & PC)
+if (sidebarHeader) {
+  sidebarHeader.addEventListener('click', () => {
+    
+    // 화면 너비 체크
+    if (window.innerWidth <= 768) {
+      // [모바일 동작] 위아래로 접기/펼치기 (기존 로직)
+      if (sidebar) sidebar.classList.toggle('open');
+      
+    } else {
+      // [PC 동작] 왼쪽으로 접기/펼치기 (신규 로직)
+      if (sidebar) sidebar.classList.toggle('closed');
+    }
+    
+  });
+}

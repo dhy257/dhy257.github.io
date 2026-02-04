@@ -36,6 +36,18 @@
   display: flex;
   align-items: center;
 }
+/* 경로 텍스트 (파일 선택 시 보임) */
+.current_path_display {
+  display: none; /* 평소엔 숨김 */
+  font-size: 0.8rem;
+  color: #ff5500bd;
+  font-weight: bold;
+  margin-top: 5px;
+  word-break: break-all;
+}
+.current_path_display.active {
+  display: block;
+}
 /* 예제 리스트들 */
 .sidebar_content {
   flex: 1;
@@ -103,7 +115,63 @@ summary.sub-folder:hover {
   /* 선택시 메인 색 -> 강조 */
   color: #eeeeee;
 }
+/* 사이드바 헤더 */
+/* 화살표 아이콘 */
+.toggle_icon {
+  display: block;
+  color: #888;
+  cursor: pointer;
+  transition: transform 0.3s;
+  /* PC에서는 화살표가 왼쪽,오른쪽 */
+  transform: rotate(90deg); 
+}
 
+/* PC 사이드바 헤더 */
+.sidebar_header {
+  cursor: pointer;
+  pointer-events: auto; /* 클릭 활성화 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PC 사이드바 애니메이션 */
+.sidebar {
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+/* JS에서 PC 화면일 때 버튼을 누르면 sidebar에 'closed' 클래스를 붙임 */
+.sidebar.closed {
+  /* 버튼만 남을 정도의 너비 */
+  width: 60px; 
+}
+
+/* 접혔을 때: Study List 글자 숨기기 */
+.sidebar.closed .header_info {
+  display: none;
+}
+
+/* 접혔을 때: 리스트 내용 숨기기 */
+.sidebar.closed .sidebar_content {
+  display: none;
+}
+
+/* 접혔을 때: 화살표 아이콘 정렬 및 회전 */
+.sidebar.closed .sidebar_header {
+  /* 중앙 정렬 */
+  justify-content: center;
+}
+
+.sidebar.closed .toggle_icon {
+  transform: rotate(-90deg); /* 오른쪽으로 회전 */
+  color: #ff5500; /* 강조색 */
+}
+
+/* PC에서는 경로 텍스트 숨김 유지 */
+.current_path_display {
+  display: none;
+}
 /* 파일 리스트 스타일 */
 .sidebar ol {
   /* 들여쓰기 처럼 보기 편하게 */
@@ -133,6 +201,15 @@ summary.sub-folder:hover {
   /* 오른쪽으로 살짝 이동 */
   transform: translateX(5px);
 }
+/* 파일 선택 시 계속 강조 */
+.sidebar a.active {
+  /* 파일 강조 색 */
+  color: #ff5500;
+  /* 파일 강조 배경 색 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* 오른쪽으로 살짝 이동 */
+  transform: translateX(5px);
+}
 
 /* ================================== Content View ================================== */
 .content_view {
@@ -146,9 +223,18 @@ summary.sub-folder:hover {
   height: 100%;
   border: none;
   /* 하단 공백 제거 */
-  display: block; 
+  display: block;
 }
 /* 안내문구 */
+.placeholder_text.mobile {
+  display: none;
+}
+
+/* PC용 멘트(기본값) */
+.placeholder_text.pc {
+  display: block;
+}
+
 .placeholder_text {
   /* 기준1 기준 중간 */
   position: absolute;
@@ -163,4 +249,81 @@ summary.sub-folder:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  /* Viewer Mobile Layout */
+  .viewer_container {
+    display: flex;
+    flex-direction: column; /* 세로 배치 */
+    height: 100%;
+  }
+
+  /* --- 사이드바 (Study List) --- */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #333333;
+    flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+    background-color: #141414;
+    transition: all 0.3s ease;
+  }
+
+  /* 사이드바 헤더 */
+  .sidebar_header {
+    pointer-events: auto; /* 클릭 가능 */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #141414;
+  }
+
+  /* 화살표 아이콘 보이기 */
+  .toggle_icon {
+    display: block;
+    color: #888;
+    transition: transform 0.3s;
+  }
+  /* --- 사이드바 내용 (리스트 목록) --- */
+  .sidebar_content {
+    /* 기본적으로 숨김 */
+    display: none;
+
+    /* 펼쳐졌을 때 최대 높이 제한 */
+    max-height: 30vh;
+    overflow-y: auto; /* 내용 많으면 스크롤 */
+
+    border-top: 1px solid #333;
+    background: #0f0f0f;
+  }
+
+  /* JS에서 sidebar에 open 클래스를 붙이면 내용이 등장하며 sidebar 높이가 늘어남 */
+  .sidebar.open .sidebar_content {
+    display: block;
+  }
+
+  .sidebar.open .toggle_icon {
+    transform: rotate(180deg); /* 화살표 180도 회전 */
+    color: #ff5500;
+  }
+
+  /* --- 콘텐츠 뷰어 (Iframe 영역) --- */
+  .content_view {
+    /* 남은 공간을 모두 차지*/
+    flex: 1;
+    height: auto;
+  }
+
+  /* PC용 안내 문구 숨김 */
+  .placeholder_text.pc {
+    display: none;
+  }
+
+  /* 모바일용 안내 문구 보임 */
+  .placeholder_text.mobile {
+    display: block;
+  }
 }

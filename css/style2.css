@@ -8,7 +8,8 @@ panel-color: #141414;
 text-main: #eeeeee;
 text-sub: #888888;
 accent-color: #ff5500;
-border-color: #333333; */
+border-color: #333333;
+*/
 * {
   /* 기본설정 */
   margin: 0;
@@ -16,7 +17,8 @@ border-color: #333333; */
   box-sizing: border-box;
   /* 스크롤 부드럽게 */
   scroll-behavior: smooth;
-  font-family: "Pretendard", sans-serif; /* 폰트 통일 */
+  /* 폰트 통일 */
+  font-family: "Pretendard", sans-serif;
 }
 
 body {
@@ -29,7 +31,7 @@ body {
 a {
   /* 밑줄 제거 */
   text-decoration: none;
-  color: inherit;
+  /* color: inherit; */
 }
 ul,
 ol {
@@ -46,14 +48,15 @@ header {
   width: 100%;
   height: 70px;
   /* 헤더 색 */
-  background-color: #0a0a0a; /* 반투명 검정 */
+  background-color: #0a0a0a;
   backdrop-filter: blur(10px); /* 블러 효과 */
 
   border-bottom: 1px solid #333333;
+  /* 가로배치, 양끝, 세로중앙 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  /* 안겹치고 항상 뜨게 최상위 */
   z-index: 1000;
   padding: 0 40px; /* 좌우 여백 */
 }
@@ -91,23 +94,27 @@ nav a {
 /* 메뉴 호버 시 하이라이트 효과 */
 nav a:hover {
   color: #ff5500 !important;
-  border-bottom: 1px solid #ff5500;
+  /* border-bottom: 1px solid #ff5500; */
 }
 
-/* nav a::after {
+nav a::after {
   content: "";
+  /* 기준1 nav의 각 a태그 버튼들(about, study..)기준 좌하단 배치*/
   position: absolute;
   bottom: -5px;
   left: 0;
+  /* 자리 차지 없다가 */
   width: 0%;
+  /* 두께 */
   height: 2px;
   background-color: #ff5500;
   transition: width 0.3s;
 }
 
 nav a:hover::after {
+  /* 마우스 가져다 대면 꽉차오르는 효과 */
   width: 100%;
-} */
+}
 
 /* Mobile Toggle 숨김 처리*/
 .menu_toggle_btn {
@@ -157,7 +164,7 @@ main {
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
-/* ================================== ABOUT Styles ================================== */
+/* ================================== ABOUT ================================== */
 .about_container {
   display: flex;
   gap: 40px;
@@ -224,12 +231,11 @@ main {
   color: #ccc;
 }
 
-/* ================================== SKILLS Styles ================================== */
+/* ================================== SKILLS ================================== */
 .skills_container {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  
 }
 
 .skill_category h3 {
@@ -454,7 +460,7 @@ main {
 .project_result_display:hover img {
   filter: grayscale(0%);
 }
-/* ================================== CONTACT Styles ================================== */
+/* ================================== CONTACT ================================== */
 .contact_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -469,6 +475,7 @@ main {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
+  /* 기준7 */
   position: relative;
 }
 
@@ -502,8 +509,9 @@ main {
   color: #aaa;
 }
 
-/* 툴팁 (복사 안내) */
+/* click to copy */
 .tooltip {
+  /* 기준7 각email, phone..의 전체 container 기준 우상단 배치*/
   position: absolute;
   top: 10px;
   right: 10px;
@@ -512,10 +520,11 @@ main {
   color: #fff;
   padding: 2px 6px;
   border-radius: 3px;
+  /* 평소에는 안보임 */
   opacity: 0;
   transition: opacity 0.3s;
 }
-
+/* click to copy 보여주기 */
 .contact_card:hover .tooltip {
   opacity: 1;
 }
@@ -546,62 +555,18 @@ footer {
   background-color: #ff5500;
   color: #eeeeee;
 }
-/* Responsive (Mobile) */
+/*================================== 모바일 반응형 ==================================*/
 @media (max-width: 768px) {
-  .project_container {
-    flex-direction: column-reverse; /* 결과물이 위, 텍스트가 아래 */
-    height: auto;
+  /* container 및 section 모바일 환경에서는 흰색 여백이 너무 두드러지지 않게 조절 */
+  .container {
+    margin: 0 10px 10px 10px;
   }
 
-  .project_slider,
-  .project_result_display {
-    width: 100%;
-    flex: none;
+  .title_desc {
+    margin: 10px 10px 0 10px;
   }
 
-  .project_result_display {
-    height: 250px;
-  }
-
-  .project_slider {
-    height: 180px;
-    border-left: none;
-    /* 프로젝트 카드 테두리(모바일) */
-    border-top: 4px solid #ff5500;
-  }
-
-  .project_card h3 {
-    font-size: 1.8rem;
-  }
-  .project_card p {
-    display: none;
-  } /* 설명 숨김 */
-
-  .slider_btn {
-    bottom: 10px;
-    width: 30px;
-    height: 30px;
-  }
-  .prev_btn {
-    right: 50px;
-  }
-
-  /* Viewer Mobile */
-  .viewer_container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    height: 35%;
-    border-right: none;
-    /* 예제 화면과 파일화면 사이 테두리(모바일) */
-    border-bottom: 1px solid #333333;
-  }
-  .content_view {
-    height: 65%;
-  }
-
-  /* Header Mobile */
+  /*================================== Header Mobile ==================================*/
   .menu_toggle_btn {
     display: block;
     width: 30px;
@@ -627,7 +592,7 @@ footer {
     margin-bottom: 0;
   }
 
-  /* Nav */
+  /*================================== Nav Mobile ==================================*/
   nav {
     /* 평소에는 안 보임 (모바일) */
     display: none;
@@ -687,5 +652,70 @@ footer {
   nav a:hover {
     color: #ff5500;
     background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* ================================== Project Mobile ================================== */
+  .project_container {
+    flex-direction: column-reverse; /* 결과물이 위, 텍스트가 아래 */
+    height: auto;
+  }
+
+  .project_slider,
+  .project_result_display {
+    width: 100%;
+    flex: none;
+  }
+
+  .project_result_display {
+    height: 250px;
+  }
+
+  .project_slider {
+    height: 180px;
+    border-left: none;
+    /* 프로젝트 카드 테두리(모바일) */
+    border-top: 4px solid #ff5500;
+  }
+
+  .project_card h3 {
+    font-size: 1.8rem;
+  }
+  .project_card p {
+    display: none;
+  } /* 설명 숨김 */
+
+  .slider_btn {
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .prev_btn {
+    right: 50px;
+  }
+  /*================================== Contact Mobile ==================================*/
+  .contact_container {
+    /* 1fr(균등분할)을 2번 반복 -> 무조건 2칸 차지 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 카드끼리 너무 안좁게 */
+    gap: 10px;
+  }
+
+  /* 내부 여백과 폰트 크기 조절 */
+  .contact_card {
+    padding: 15px;
+  }
+
+  .contact_card .icon {
+    font-size: 1.5rem; /* 아이콘 크기 */
+    margin-bottom: 10px;
+  }
+
+  .contact_card h3 {
+    font-size: 1rem; /* 제목 크기 조절 */
+  }
+
+  .contact_card p {
+    font-size: 0.8rem; /* 설명 텍스트 조절 */
+    word-break: break-all; /* 이메일 등이 길 경우 줄바꿈 */
   }
 }
