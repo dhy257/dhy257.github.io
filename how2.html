@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do Hyun Yeo</title>
+    <!--폰트어썸 CDN : -->
+    <script
+      src="https://kit.fontawesome.com/4ec79785b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style2.css" />
+  </head>
+  <body>
+    <!-------------------------  ------------------------->
+    <!------------------------- Header ------------------------->
+    <header style="color: red; border: 1px dashed red">
+      <!------------------------- 좌측 메뉴 아이콘 ------------------------->
+      <h1 class="logo"><a href="#">LOGO</a></h1>
+      <!------------------------- 상단 바 ------------------------->
+      <nav style="color: red; border: 1px dashed red">
+        <!------------------------- 메인 메뉴바 ------------------------->
+        <ul>
+          <li style="color: green; border: 1px dashed green">
+            <a href="#">LI MENU</a>
+          </li>
+          <li style="color: green; border: 1px dashed green">
+            <a href="#about_section">LI MENU</a>
+          </li>
+          <li style="color: green; border: 1px dashed green">
+            <a href="#">LI MENU</a>
+          </li>
+          <li style="color: green; border: 1px dashed green">
+            <a href="#">LI MENU</a>
+          </li>
+          <li style="color: green; border: 1px dashed green">
+            <a href="#contact_section">LI MENU</a>
+          </li>
+        </ul>
+      </nav>
+      <!------------------------- 토글 메뉴바 ------------------------->
+      <button
+        class="menu_toggle_btn"
+        style="color: green; border: 1px dashed green"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <!------------------------- Main ------------------------->
+    <main>
+      <!-- 각 세션 그룹 묶음 -->
+      <section class="content" style="color: red; border: 1px dashed red">
+        <!-- 간단 소개 -->
+        <span>SECTION_CONTENT</span>
+        <section
+          class="about_section"
+          id="about_section"
+          style="color: red; border: 1px dashed red"
+        >
+          <span>SECTION1</span>
+          <div
+            class="title_desc"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <h2 class="sec_tit">H2 TITLE</h2>
+            <p class="desc">P DESC</p>
+          </div>
+
+          <div
+            class="container about_container"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <div
+              class="profile_area"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <div
+                class="profile_img"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div
+                class="profile_info"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <h3>H3 NAME<span>SPAN_NAME</span></h3>
+                <p><i class="fa-solid fa-calendar"></i> P_DATE</p>
+                <p><i class="fa-solid fa-location-dot"></i> P_REGION</p>
+              </div>
+            </div>
+
+            <div
+              class="intro_area"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <span>DIV</span>
+              <h3>"H3_INTRO"</h3>
+              <p>
+                P_CONTENT<br />
+                P_CONTENT<br />
+                P_CONTENT
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 사용 기술 -->
+        <section
+          class="skils_section"
+          id="skils_section"
+          style="color: red; border: 1px dashed red"
+        >
+          <span>SECTION2</span>
+          <div
+            class="title_desc"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <h2 class="sec_tit">H2_TITLE</h2>
+            <p class="desc">P_DESC</p>
+          </div>
+
+          <div
+            class="container skills_container"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <span>DIV_SKILLS_CONTAINER</span>
+            <div
+              class="skill_category"
+              id="Frontend"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <span>DIV_SKILL_CATEGORY</span>
+              <h3>H3_CATEGORY</h3>
+              <div
+                class="skill_list"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <span>DIV_SKILL_LIST</span>
+                <div
+                  class="skill_card"
+                  style="color: yellow; border: 1px dashed yellow"
+                >
+                  <i class="fa-brands fa-html5" style="color: #e34f26"></i>
+                  <span>SKILL_NAME</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-css3-alt" style="color: #1572b6"></i>
+                  <span>CSS3</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-js" style="color: #f7df1e"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill_card">
+                  <i
+                    class="fa-solid fa-mobile-screen"
+                    style="color: #42a5f5"
+                  ></i>
+                  <span>Dart / Flutter</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-android" style="color: #3ddc84"></i>
+                  <span>Kotlin</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="skill_category"
+              id="Backend"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <h3>Backend & Basic</h3>
+              <div class="skill_list">
+                <div class="skill_card">
+                  <i class="fa-brands fa-python" style="color: #3776ab"></i>
+                  <span>Python</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-java" style="color: #f89820"></i>
+                  <span>Java</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-solid fa-c" style="color: #00599c"></i>
+                  <span>C</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-solid fa-fire" style="color: #ffca28"></i>
+                  <span>Firebase</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="skill_category"
+              id="Tools"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <h3>Tools</h3>
+              <div class="skill_list">
+                <div class="skill_card">
+                  <i class="fa-brands fa-git-alt" style="color: #f05032"></i>
+                  <span>Git</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-github" style="color: #fff"></i>
+                  <span>GitHub</span>
+                </div>
+                <div class="skill_card">
+                  <i class="fa-brands fa-figma" style="color: #f24e1e"></i>
+                  <span>Figma</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 모음 -->
+        <section
+          class="proj_section"
+          id="proj_section"
+          style="color: red; border: 1px dashed red"
+        >
+          <span>SECTION3</span>
+          <div
+            class="title_desc"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <h2 class="sec_tit">H2_TITLE</h2>
+            <p class="desc">P_DESC</p>
+          </div>
+
+          <div
+            class="container"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <span>DIV_CONTAINER</span>
+            <div
+              class="project_container"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <div
+                class="project_slider"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <span>DIV_SLIDER</span>
+                <button
+                  class="slider_btn prev_btn"
+                  style="color: green; border: 1px dashed green"
+                >
+                  <!-- 왼 화살표 -->
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div
+                  class="card_viewport"
+                  style="color: yellow; border: 1px dashed yellow"
+                >
+                  <span>DIV_CARD</span>
+                  <div
+                    class="card_wrapper"
+                    style="color: yellow; border: 1px dashed yellow"
+                  >
+                    <span>DIV_WRAPPER</span>
+                    <div
+                      class="project_card active"
+                      data-index="0"
+                      style="color: yellow; border: 1px dashed yellow"
+                    >
+                      <a href="#" target="_blank">
+                        <!-- <a href="https://www.figma.com/proto/sgWNV0fCTFITBI9xfnuAwC/%EA%B9%83%ED%92%88%ED%83%80?node-id=13-3&p=f&t=SbxdUOii1pTz4eTR-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=13%3A3" target="_blank"> -->
+                        <h3>H3_PROJ</h3>
+                        <p>
+                          P_PROJ<br />
+                          P_PROJ
+                        </p>
+                      </a>
+                    </div>
+
+                    <div
+                      class="project_card"
+                      data-index="1"
+                      style="color: yellow; border: 1px dashed yellow"
+                    >
+                      <a href="#" target="_blank">
+                        <h3>H3_PROJ</h3>
+                        <p>
+                          P_PROJ<br />
+                          P_PROJ
+                        </p>
+                      </a>
+                    </div>
+
+                    <div
+                      class="project_card"
+                      data-index="2"
+                      style="color: yellow; border: 1px dashed yellow"
+                    >
+                      <a href="#" target="_blank">
+                        <h3>H3_PROJ</h3>
+                        <p>
+                          P_PROJ<br />
+                          P_PROJ
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="slider_btn next_btn" style="color: green; border: 1px dashed green"
+>
+                  <!-- 우 화살표 -->
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <div
+                class="project_result_display"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <div
+                  class="result_group active"
+                  data-index="0"
+                  style="color: yellow; border: 1px dashed yellow"
+                >
+                  <img
+                    src="./01_assets/01_images/레포 추가.png"
+                    alt="GitPumTa 결과물1"
+                  />
+                  <img
+                    src="./01_assets/01_images/타이머(시작 후 화면).ver2.png"
+                    alt="GitPumTa 결과물2"
+                  />
+                </div>
+
+                <div
+                  class="result_group"
+                  data-index="1"
+                  style="color: yellow; border: 1px dashed yellow"
+                >
+                  <img
+                    src="./01_assets/01_images/freshcheck1.png"
+                    alt="Fresh Check 결과물 1"
+                  />
+                  <img
+                    src="./01_assets/01_images/freshcheck2.png"
+                    alt="Fresh Check 결과물 2"
+                  />
+                </div>
+
+                <div
+                  class="result_group"
+                  data-index="2"
+                  style="color: yellow; border: 1px dashed yellow"
+                >
+                  <div
+                    style="
+                      background-color: rgba(255, 255, 255, 0.507);
+                      width: 100%;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 연락 -->
+        <section
+          class="contact_section"
+          id="contact_section"
+          style="color: red; border: 1px dashed red"
+        >
+          <span>SECTION4</span>
+          <div
+            class="title_desc"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <h2 class="sec_tit">H3_TITLE</h2>
+            <p class="desc">P_DESC</p>
+          </div>
+
+          <div
+            class="container contact_container"
+            style="color: yellow; border: 1px dashed yellow"
+          >
+            <!-- 실제 복사되는 내용은 data-text -->
+            <div
+              class="contact_card copy_btn"
+              data-text="test@example.com"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <div
+                class="icon"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <p>test@example.com</p>
+              <span class="tooltip">Click to Copy</span>
+            </div>
+
+            <div
+              class="contact_card copy_btn"
+              data-text="010-1234-5678"
+              style="color: yellow; border: 1px dashed yellow"
+            >
+              <div
+                class="icon"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3>Phone</h3>
+              <p>010-1234-5678</p>
+              <span class="tooltip">Click to Copy</span>
+            </div>
+
+            <a
+              href="https://github.com/dhy257"
+              target="_blank"
+              class="contact_card link_btn"
+            >
+              <div
+                class="icon"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <h3>GitHub</h3>
+              <p>Visit Profile</p>
+            </a>
+
+            <a href="#" target="_blank" class="contact_card link_btn">
+              <div
+                class="icon"
+                style="color: yellow; border: 1px dashed yellow"
+              >
+                <i class="fa-solid fa-link"></i>
+              </div>
+              <h3>Blog / Etc</h3>
+              <p>Visit Site</p>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!------------------------- Footer ------------------------->
+    <footer style="border: 1px dashed red">
+      <p>P_FOOTER</p>
+    </footer>
+    <!-- 맨 위로 가는 버튼 -->
+    <a href="#" class="top_btn">TOP</a>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
