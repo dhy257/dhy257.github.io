@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. 데이터 정의 (Study Data)
-   ========================================================================== */
+// 각종 예제 파일 경로 및 이름들
 const studyData = [
   {
     folderName: "20260122_yeodohyun",
@@ -102,17 +100,13 @@ const studyData = [
   },
 ];
 
-/* ==========================================================================
-   2. DOM 요소 선택 (전역 변수)
-   ========================================================================== */
+/* ==================================================================== */
 const studyContainer = document.getElementById("study_list_container");
 const sidebarHeader = document.getElementById('sidebar_header_toggle');
 const sidebar = document.querySelector('.sidebar');
 const pathDisplay = document.getElementById('current_path_display');
 
-/* ==========================================================================
-   3. 렌더링 함수
-   ========================================================================== */
+/* ================================== 렌더링 함수 ================================== */
 function renderStudyList() {
   if (!studyContainer) return;
 
@@ -204,27 +198,25 @@ function createListItem(rootFolder, fullPath, displayName) {
 // 초기 렌더링 실행
 renderStudyList();
 
-/* ==========================================================================
-   4. 통합 이벤트 핸들러 (클릭 기능 모음)
-   ========================================================================== */
+/* ================================== 통합 이벤트 핸들러 ================================== */
 
-// 4-1. 파일 리스트 클릭 이벤트 (위임 패턴)
+// 4-1. 파일 리스트 클릭 이벤트
 if (studyContainer) {
   studyContainer.addEventListener('click', function (e) {
     // A 태그(파일)를 클릭했을 때만 동작
     if (e.target.tagName === 'A') {
       const clickedFile = e.target;
 
-      // [기능 1] Active 클래스 토글 (현재 선택 강조)
+      // Active 클래스 토글 (현재 선택 강조)
       const allLinks = studyContainer.querySelectorAll('a');
       allLinks.forEach((link) => link.classList.remove('active'));
       clickedFile.classList.add('active');
 
-      // [기능 2] Placeholder(안내 문구) 숨기기
+      // Placeholder(안내 문구) 숨기기
       const placeholders = document.querySelectorAll('.placeholder_text');
       placeholders.forEach(ph => ph.style.display = 'none');
 
-      // [기능 3] 다중 폴더 경로 추적 및 표시
+      // 다중 폴더 경로 추적 및 표시
       let pathParts = [];
       let currentElement = clickedFile.parentElement; // li부터 시작
 
@@ -250,7 +242,7 @@ if (studyContainer) {
         pathDisplay.classList.add('active'); // CSS에서 보이게 처리
       }
 
-      // [기능 4] 모바일 환경: 선택 후 리스트 접기
+      // 모바일 환경: 선택 후 리스트 접기
       if (window.innerWidth <= 768) {
         if (sidebar) sidebar.classList.remove('open');
       }
@@ -258,7 +250,7 @@ if (studyContainer) {
   });
 }
 
-// 4-2. 사이드바 토글 (통합: 모바일 & PC)
+// 4-2. 사이드바 토글
 if (sidebarHeader) {
   sidebarHeader.addEventListener('click', () => {
     
@@ -274,3 +266,21 @@ if (sidebarHeader) {
     
   });
 }
+
+/* ================================== 창 크기 변경 ================================== */
+window.addEventListener('resize', () => {
+  // 모바일 화면으로 진입 시 (768px 이하)
+  if (window.innerWidth <= 768) {
+    // PC에서 쓰던 'closed' 클래스가 있다면 제거 (모바일 레이아웃 깨짐 방지)
+    if (sidebar.classList.contains('closed')) {
+      sidebar.classList.remove('closed');
+    }
+  } 
+  // PC 화면으로 진입 시 (769px 이상)
+  else {
+    // 모바일에서 쓰던 'open' 클래스가 있다면 제거
+    if (sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+    }
+  }
+});
