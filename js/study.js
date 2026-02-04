@@ -115,7 +115,8 @@ function renderStudyList() {
   studyData.forEach((data, index) => {
     // 1. 큰 날짜 폴더 생성
     const details = document.createElement("details");
-    if (index === 0) details.open = true; // 첫 번째 폴더 열어두기
+    // 첫 번째 폴더 열어두기
+    if (index === 0) details.open = true;
 
     const summary = document.createElement("summary");
     summary.className = "date";

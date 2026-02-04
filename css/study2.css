@@ -250,7 +250,7 @@ summary.sub-folder:hover {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* 모바일 반응형 */
+/*================================== 모바일 반응형 ==================================*/
 @media (max-width: 768px) {
   /* Viewer Mobile Layout */
   .viewer_container {
@@ -298,7 +298,7 @@ summary.sub-folder:hover {
     display: none;
 
     /* 펼쳐졌을 때 최대 높이 제한 */
-    max-height: 30vh;
+    max-height: 22vh;
     overflow-y: auto; /* 내용 많으면 스크롤 */
 
     border-top: 1px solid #333;
